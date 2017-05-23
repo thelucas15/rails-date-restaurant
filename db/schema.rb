@@ -10,10 +10,54 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170522222606) do
+ActiveRecord::Schema.define(version: 20170523161050) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "evaluations", force: :cascade do |t|
+    t.boolean "decision"
+    t.bigint "match_list_id"
+    t.bigint "restaurant_id"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["match_list_id"], name: "index_evaluations_on_match_list_id"
+    t.index ["restaurant_id"], name: "index_evaluations_on_restaurant_id"
+    t.index ["user_id"], name: "index_evaluations_on_user_id"
+  end
+
+  create_table "match_lists", force: :cascade do |t|
+    t.time "start_time"
+    t.time "end_time"
+    t.bigint "restaurant_id"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["restaurant_id"], name: "index_match_lists_on_restaurant_id"
+    t.index ["user_id"], name: "index_match_lists_on_user_id"
+  end
+
+  create_table "reservations", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "evaluation_id"
+    t.bigint "match_list_id"
+    t.bigint "restaurant_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["evaluation_id"], name: "index_reservations_on_evaluation_id"
+    t.index ["match_list_id"], name: "index_reservations_on_match_list_id"
+    t.index ["restaurant_id"], name: "index_reservations_on_restaurant_id"
+    t.index ["user_id"], name: "index_reservations_on_user_id"
+  end
+
+  create_table "restaurants", force: :cascade do |t|
+    t.string "food_type"
+    t.string "address"
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -28,7 +72,7 @@ ActiveRecord::Schema.define(version: 20170522222606) do
     t.inet "last_sign_in_ip"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "name"
+    t.string "username"
     t.integer "age"
     t.integer "age_pref_start"
     t.integer "age_pref_end"
@@ -40,4 +84,13 @@ ActiveRecord::Schema.define(version: 20170522222606) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "evaluations", "match_lists"
+  add_foreign_key "evaluations", "restaurants"
+  add_foreign_key "evaluations", "users"
+  add_foreign_key "match_lists", "restaurants"
+  add_foreign_key "match_lists", "users"
+  add_foreign_key "reservations", "evaluations"
+  add_foreign_key "reservations", "match_lists"
+  add_foreign_key "reservations", "restaurants"
+  add_foreign_key "reservations", "users"
 end
