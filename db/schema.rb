@@ -10,8 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
-ActiveRecord::Schema.define(version: 20170523143716) do
+ActiveRecord::Schema.define(version: 20170523161050) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -73,10 +72,7 @@ ActiveRecord::Schema.define(version: 20170523143716) do
     t.inet "last_sign_in_ip"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-<<<<<<< HEAD
     t.string "username"
-=======
->>>>>>> c5ac70e443c14cb883e6fc42175990a17b9f026f
     t.integer "age"
     t.integer "age_pref_start"
     t.integer "age_pref_end"
