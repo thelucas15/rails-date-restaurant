@@ -10,29 +10,39 @@ Restaurant.destroy_all
 puts 'Creating restaurants...'
 restaurants_attributes = [
   {
-    name:         "Epicure au Bristol",
-    address:      "112 rue du Fg St-Honoré 75008 Paris",
-    food_type:        "mexican"
+    name:         "Pistola y Corazon",
+    address:      "Rua da Boavista 16, Lisboa 1200-067, Portugal",
+    food_type:        "mexican",
+    description: "Mexicana, Latino, Comida de rua",
+    photo: "https://www.washingtonian.com/wp-content/uploads/2016/12/empanada2.jpg.optimal.jpg"
   },
   {
     name:         "La truffière",
     address:      "4 rue Blainville 75005 Paris",
-    food_type:        "mexican"
+    food_type:        "mexican",
+    description: "Mexicana, Latino, Comida de rua",
+    photo: "https://static-communitytable.parade.com/wp-content/uploads/2016/01/MexicanPizza-H.jpg"
   },
   {
     name:         "Le pré catelan",
     address:      "route de Suresnes 75016 Paris",
-    food_type:        "american"
+    food_type:        "american",
+    description: "Mexicana, Latino, Comida de rua",
+    photo: "url"
   },
   {
     name:         "Le pré",
     address:      "route de Suresnes 7",
-    food_type:        "french"
+    food_type:        "french",
+    description: "Mexicana, Latino, Comida de rua",
+    photo: "url"
   },
   {
     name:         "Len",
     address:      "route de Sure 7 Paris",
-    food_type:        "mexican"
+    food_type:        "mexican",
+    description: "Mexicana, Latino, Comida de rua",
+    photo: "http://www.abuelos.com/assets/uploads/2014/09/Lunch_Mexican_Stack-800x600-c-center.jpg"
   }
 ]
 Restaurant.create!(restaurants_attributes)

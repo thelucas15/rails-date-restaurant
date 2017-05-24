@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170523161050) do
+ActiveRecord::Schema.define(version: 20170524151141) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,11 +29,11 @@ ActiveRecord::Schema.define(version: 20170523161050) do
 
   create_table "match_lists", force: :cascade do |t|
     t.time "start_time"
-    t.time "end_time"
     t.bigint "restaurant_id"
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.date "date"
     t.index ["restaurant_id"], name: "index_match_lists_on_restaurant_id"
     t.index ["user_id"], name: "index_match_lists_on_user_id"
   end
@@ -57,6 +57,8 @@ ActiveRecord::Schema.define(version: 20170523161050) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "photo"
+    t.string "description"
   end
 
   create_table "users", force: :cascade do |t|

@@ -5,14 +5,14 @@
 
       <div class="col-xs-12 col-sm-4">
         <!-- insert <div class="card"> -->
-        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('background.jpg');">
-          <div class="card-category">Popular</div>
+        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= r.photo %>');">
+          <div class="card-category"> <%= r.food_type %></div>
           <div class="card-description">
             <h2><%= r.name %></h2>
-            <p>Very cool stuff, useful and smart</p>
+            <p><%= r.description %></p>
           </div>
-          <img class="card-user avatar" src="user.jpg">
-          <a class="card-link" href="#" ></a>
+            <%=  link_to "link text...", restaurant_path(r), class: "card-link" %>
+        <!--   <a class="card-link" href="#" ></a> -->
         </div>
       </div>
 
