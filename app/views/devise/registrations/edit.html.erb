@@ -1,0 +1,31 @@
+<h2>Edit <%= resource_name.to_s.humanize %></h2>
+
+<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+
+    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+      <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
+    <% end %>
+
+    <%= f.input :username, autocomplete: "on", placeholder: "Forest1", label:"User name", required: true %>
+    <%= f.input :first_name, autocomplete: "on", placeholder: "Tom", required: true %>
+    <%= f.input :last_name, autocomplete: "on", placeholder: "Hanks", required: true %>
+
+    <%= f.input :age, autocomplete: "off", placeholder: "60", required: true, input_html: { min: '0', step: 'any' } %>
+    <%= f.input :age_pref_start, autocomplete: "off", label: "Age preferences from", placeholder: "30", required: true, input_html: { min: '18', step: 'any' }%>
+    <%= f.input :age_pref_end, autocomplete: "off", label: "Age preferences end", placeholder: "35", required: true, input_html: { min: '18', step: 'any' } %>
+    <%= f.input :gender_pref, collection: ["Female", "Male", "Both"], label: "Gender preferences", required: true %>
+    <%= f.input :hash_tag_pref, autocomplete: "off", placeholder: "#funnyperson", label: "Hash tag which describe you", required: true %>
+    <%= f.input :description, autocomplete: "off", placeholder: "I'm looking for nice person to talk.", label: "Describe you in few words (max 140 characters)", required: true, :max => 140, :min => 10 %>
+
+
+<% end %>
+
+<h3>Cancel my account</h3>
+
+<p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+
+<%= link_to "Back", :back %>
+
