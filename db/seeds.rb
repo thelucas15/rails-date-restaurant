@@ -12,12 +12,12 @@ restaurants_attributes = [
   {
     name:         "Epicure au Bristol",
     address:      "112 rue du Fg St-Honoré 75008 Paris",
-    food_type:        "italian"
+    food_type:        "mexican"
   },
   {
     name:         "La truffière",
     address:      "4 rue Blainville 75005 Paris",
-    food_type:        "japanese"
+    food_type:        "mexican"
   },
   {
     name:         "Le pré catelan",

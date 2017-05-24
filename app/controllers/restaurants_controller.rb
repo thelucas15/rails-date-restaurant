@@ -1,7 +1,8 @@
 class RestaurantsController < ApplicationController
 
   def index
-    @restaurants = Restaurant.all
+   # @restaurants = Restaurant.find_by_food_type(params[:food_type])
+    @restaurants = Restaurant.where(food_type: "mexican")
   end
 
   def show
