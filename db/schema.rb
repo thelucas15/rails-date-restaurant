@@ -29,11 +29,11 @@ ActiveRecord::Schema.define(version: 20170524151141) do
 
   create_table "match_lists", force: :cascade do |t|
     t.time "start_time"
-    t.time "end_time"
     t.bigint "restaurant_id"
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.date "date"
     t.index ["restaurant_id"], name: "index_match_lists_on_restaurant_id"
     t.index ["user_id"], name: "index_match_lists_on_user_id"
   end
