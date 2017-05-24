@@ -12,12 +12,14 @@ restaurants_attributes = [
   {
     name:         "Epicure au Bristol",
     address:      "112 rue du Fg St-Honoré 75008 Paris",
-    food_type:        "mexican"
+    food_type:        "mexican",
+    photo: "app/assets/images/photo1.jpg"
   },
   {
     name:         "La truffière",
     address:      "4 rue Blainville 75005 Paris",
-    food_type:        "mexican"
+    food_type:        "mexican",
+    photo: "app/assets/images/photo2.jpg"
   },
   {
     name:         "Le pré catelan",
@@ -32,7 +34,8 @@ restaurants_attributes = [
   {
     name:         "Len",
     address:      "route de Sure 7 Paris",
-    food_type:        "mexican"
+    food_type:        "mexican",
+    photo: "app/assets/images/photo3.jpg"
   }
 ]
 Restaurant.create!(restaurants_attributes)
