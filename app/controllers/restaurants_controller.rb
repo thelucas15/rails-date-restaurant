@@ -7,6 +7,7 @@ class RestaurantsController < ApplicationController
 
   def show
     @restaurant = Restaurant.find(params[:id])
+    @match_lists = MatchList.new(params[:subaction])
   end
 
   def search

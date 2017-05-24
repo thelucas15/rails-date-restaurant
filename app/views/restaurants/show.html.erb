@@ -16,10 +16,14 @@
 
 
 
-
-<ul> <% match_lists.each do |i| %>
+<ul> <% @restaurant.match_lists.each do |i| %>
 
   <li>
-    match_lists.username
+   <%=  i.user.username %>
   </li>
+  <% end %>
 </ul>
+
+<%= simple_form_for([@restaurant,@match_list]) do |f| %>
+<%= f.button :submit, 'Save' %>
+<% end %>
