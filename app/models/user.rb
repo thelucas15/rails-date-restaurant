@@ -5,6 +5,16 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable,
          :omniauthable, omniauth_providers: [:facebook]
 
+  has_many :match_lists
+  validates :username, presence: true, uniqueness: true, on: :update
+  validates :age, presence: true, on: :update
+  validates :age_pref_start, presence: true, on: :update
+  validates :age_pref_end, presence: true, on: :update
+  validates :description, presence: true, on: :update
+  validates :hash_tag_pref, presence: true, on: :update
+  validates :email, presence: true, on: :update
+  validates :password, presence: true, on: :update
+
   def self.find_for_facebook_oauth(auth)
     user_params = auth.slice(:provider, :uid)
     user_params.merge! auth.info.slice(:email, :first_name, :last_name)
