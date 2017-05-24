@@ -17,10 +17,10 @@ restaurants_attributes = [
     photo: "https://www.washingtonian.com/wp-content/uploads/2016/12/empanada2.jpg.optimal.jpg"
   },
   {
-    name:         "La truffière",
-    address:      "4 rue Blainville 75005 Paris",
+    name:         "El Clandestino",
+    address:      "Rua da Rosa 321, Lisboa 1200-386, Portugal",
     food_type:        "mexican",
-    description: "Mexicana, Latino, Comida de rua",
+    description: "Mexicana, Peruano, Latino",
     photo: "https://static-communitytable.parade.com/wp-content/uploads/2016/01/MexicanPizza-H.jpg"
   },
   {
@@ -38,10 +38,10 @@ restaurants_attributes = [
     photo: "url"
   },
   {
-    name:         "Len",
-    address:      "route de Sure 7 Paris",
+    name:         "La Siesta",
+    address:      "Passeio Maritimo de Alges, Edificio La Siesta, Lisboa 1400-039, Portugal",
     food_type:        "mexican",
-    description: "Mexicana, Latino, Comida de rua",
+    description: "Mexicana Da América Central Latino Fast food Grill",
     photo: "http://www.abuelos.com/assets/uploads/2014/09/Lunch_Mexican_Stack-800x600-c-center.jpg"
   }
 ]

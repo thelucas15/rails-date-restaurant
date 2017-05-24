@@ -1,2 +1,12 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+
+<div class="container">
+
+  <%= simple_form_for :search, url: "/restaurants", method: "get" do |f| %>
+     <div class="form-inputs form-inline">
+      <%= f.input :date, placeholder: "Date", label:"Date", required: true, as: :date %>
+      <%= f.input :start_time, placeholder: "Time", label:"Time", required: true, as: :time %>
+      <%= f.input :food_type, collection: ["Mexican", "French", "Japanese", "Italian"], label: "Choose food type", required: true %>
+    </div>
+  <div><%= f.submit 'GO!', class: "btn btn-primary btn-lg" %></div>
+  <% end %>
+</div>
