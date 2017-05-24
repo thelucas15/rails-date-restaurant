@@ -12,11 +12,12 @@
   <body>
     <%= render 'shared/navbar' %>
     <%= render 'shared/flash_messages' %>
-    <div class="container text-center">
+    <div class="container text-center main">
       <div class="row">
       <%= yield %>
       </div>
     </div>
+    <%= render 'shared/footer' %>
     <%= javascript_include_tag 'application' %>
   </body>
 </html>
