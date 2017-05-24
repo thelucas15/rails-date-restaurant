@@ -9,6 +9,7 @@
       <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
     <% end %>
 
+    <%= f.input :username, autocomplete: "on", placeholder: "Forest1", label:"User name", required: true %>
     <%= f.input :first_name, autocomplete: "on", placeholder: "Tom", required: true %>
     <%= f.input :last_name, autocomplete: "on", placeholder: "Hanks", required: true %>
 
