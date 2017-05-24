@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   end
 
   resources :match_lists do
-    resources :evaluations, only: [:show] do
+    resources :evaluations, only: [:show]
   end
 
   resources :evaluations, only: [:show] do
