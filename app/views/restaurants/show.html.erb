@@ -19,11 +19,13 @@
 <ul> <% @restaurant.match_lists.each do |i| %>
 
   <li>
-   <%=  i.user.username %>
+   <%=  i.user.email %>
   </li>
   <% end %>
 </ul>
 
 <%= simple_form_for([@restaurant,@match_list]) do |f| %>
-<%= f.button :submit, 'Save' %>
+<%= f.input :date %>
+<%= f.input :start_time %>
+<%= f.button :submit, 'Choose me', class: 'btn btn-primary' %>
 <% end %>
