@@ -13,4 +13,6 @@ class PagesController < ApplicationController
       "tegan-mierle-157974.jpg",
     ].sample
   end
+
+
 end

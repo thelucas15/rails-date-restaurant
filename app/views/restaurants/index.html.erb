@@ -1,4 +1,6 @@
   <div class="container">
+  <%= render 'shared/search_form' %>
+      <h2><%= @food_type %></h2>x
     <div class="row">
       <% @restaurants.each do |r| %>
       <!-- build the html for listing cards and titles -->

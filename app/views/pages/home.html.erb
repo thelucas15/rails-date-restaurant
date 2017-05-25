@@ -1,17 +1,7 @@
 <div class="wrapper" id="home-banner" style="background-image: linear-gradient(135deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.2) 50%), url(<%= image_path(@image) %>);">
   <div class="search-form text-center">
     <div class="container">
-
-      <%= simple_form_for :search, url: "/restaurants", method: "get" do |f| %>
-      <div class="form-inputs form-inline">
-        <%= f.input :date, placeholder: "Date", label:"Date", required: true, as: :date %>
-        <%= f.input :start_time, placeholder: "Time", label:"Time", required: true, as: :time %>
-        <%= f.input :food_type, collection: ["Mexican", "French", "Japanese", "Italian"], label: "Choose food type", required: true %>
-      </div>
-      <div><%= f.submit 'GO!', class: "btn btn-primary btn-lg" %></div>
-      <% end %>
+      <%= render 'shared/search_form' %>
     </div>
-
-
   </div>
 </div>
