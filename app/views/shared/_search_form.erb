@@ -1,0 +1,42 @@
+<div class="container">
+  <div class="row">
+    <form action="/restaurants" method="get" class="form-inline" name="Go!">
+
+          <div class="input-group date" id='Datetimepicker'>
+              <input type="text" class="form-control" value="<%= @date %>" name="date" placeholder="25/05/2017">
+              <div class="input-group-addon">
+                  <span class="glyphicon glyphicon-calendar"></span>
+              </div>
+              <%= content_for(:after_js) do %>
+              <script type="text/javascript">
+                  $(function () {
+                      $('#Datetimepicker').datetimepicker({ format: 'DD/MM/YYYY'});
+                  });
+              </script>
+              <% end %>
+          </div>
+          <div class="input-group date" id="timepicker">
+          <input type="text" class="form-control margin-xs" name="start_time"  value="" placeholder="20:30">
+          <div class="input-group-addon">
+                  <span class="glyphicon glyphicon-time"></span>
+              </div>
+          <%= content_for(:after_js) do %>
+              <script type="text/javascript">
+                  $(function () {
+                      $('#timepicker').datetimepicker( { format: 'LT'});
+                  });
+              </script>
+              <% end %>
+          </div>
+
+          <select name="food_type" class="form-control">
+            <option type="text" value="italian">Italian</option>
+            <option type="text" value="mexican">Mexican</option>
+            <option type="text" value="japanese">Japanese</option>
+            <option type="text" value="french">French</option>
+          </select>
+          <input type="submit" value="Go!" class="btn btn-primary">
+    </form>
+
+  </div>
+</div>
