@@ -8,9 +8,9 @@ class PagesController < ApplicationController
       "seemi-samuel-15564.jpg",
       "serge-esteve-5821.jpg",
       "tegan-mierle-157974.jpg",
-      "ali-inay-9858.jpg"
+      "ali-inay-9858.jpg",
+      "michael-discenza-199756.jpg",
+      "dave-lastovskiy-127581.jpg"
     ].sample
   end
-
-
 end
