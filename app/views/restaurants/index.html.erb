@@ -1,23 +1,12 @@
   <div class="container">
-  <%= render 'shared/search_form' %>
-      <h2><%= @food_type %></h2>x
+    <%= render 'shared/search_form' %>
+    <h2><%= @food_type %></h2>
     <div class="row">
-      <% @restaurants.each do |r| %>
-      <!-- build the html for listing cards and titles -->
+      <%= render @restaurants %>
 
-      <div class="col-xs-12 col-sm-4">
-        <!-- insert <div class="card"> -->
-        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= r.photo %>');">
-          <div class="card-category"> <%= r.food_type %></div>
-          <div class="card-description">
-            <h2><%= r.name %></h2>
-            <p><%= r.description %></p>
-          </div>
-            <%=  link_to "link text...", restaurant_path(r), class: "card-link" %>
-        <!--   <a class="card-link" href="#" ></a> -->
-        </div>
+
+      <!-- build the html for listing cards and titles -->
       </div>
 
-      <% end %>
     </div>
-  </div>
+

@@ -1,0 +1,44 @@
+/* --- Keep this sheet --- */
+/* --- Google Fonts --- */
+@import url("http://fonts.googleapis.com/css?family=Open+Sans:400,300,700|Montserrat:400,700|Abril+Fatface|Barrio");
+@import url("components/card.css");
+
+/* --- Fonts --- */
+body {
+  font-family: "Open Sans", "Helvetica", "sans-serif";
+  padding-bottom: 200px;
+  margin: 0;
+  background: #F4F4F4;
+}
+h1, h2, h3 {
+  font-family: $title-font;
+}
+a {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: none;
+}
+.container {
+  margin: 0 auto;
+}
+.text-center {
+  text-align: center;
+}
+.list-inline {
+  list-style: none;
+  padding-left: 0px;
+  margin: 0;
+}
+.list-inline li {
+  display: inline-block;
+}
+
+/*TODO: add css to display 3 aligned cards*/
+.cards {
+  display: flex;
+  justify-content: space-between;
+}
+.card {
+  flex: 0 0 32%;
+}
