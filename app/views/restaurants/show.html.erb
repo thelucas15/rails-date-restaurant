@@ -11,13 +11,40 @@
 </li>
 <li>
 
+<div class="restaurant center">
+<%= simple_form_for([@restaurant,@match_list]) do |f| %>
+<%= f.input :date %>
+<%= f.input :start_time %>
+<%= f.button :submit, 'Choose This Restaurant', class: 'btn btn-primary' %>
+<% end %>
+</div>
+
+
 </li>
 </ul>
 
 
-<ul> <% match_lists.each do |i| %>
+            <ul> <% @restaurant.match_lists.each do |i| %>
 
-  <li>
-    match_lists.username
-  </li>
-</ul>
+            <% #if Dime.now.to_date == @i.user.date %>
+                  <% if Time.now.to_date == i.date %>
+                    <li>
+                     <%=  i.user.email  %>
+
+                      <div class="invite">
+                     <%= link_to "Choose and Invite me", new_match_list_evaluation_path(i.restaurant), class: 'btn btn-primary' %>
+                  </div>
+                   <div class="remove">
+
+                    <%= link_to "Remove me from this list", restaurant_match_list_path(i.restaurant,i),
+                                method: :delete,
+                                 data: {confirm: "Are you sure?" }, class: 'btn btn-danger' %>
+                    <% end %>
+                  </div>
+                     <% end %>
+              </li>
+               <%# end  %>
+            </ul>
+
+
+
