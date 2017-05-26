@@ -1,4 +1,4 @@
-<div class="navbar-wagon">
+<div class="navbar-wagon navbar-wagon-fixed">
   <!-- Logo -->
 
   <%= link_to root_path, class: "navbar-wagon-brand" do %>
@@ -62,7 +62,6 @@
       </div>
 
     <% else %>
-
       <!-- Login text link -->
       <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
 

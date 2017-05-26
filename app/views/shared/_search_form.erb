@@ -2,21 +2,21 @@
   <div class="row">
     <form action="/restaurants" method="get" class="form-inline" name="Go!">
 
-          <div class="input-group date" id='Datetimepicker'>
-              <input type="text" class="form-control" value="<%= @date %>" name="date" placeholder="25/05/2017">
+          <div class="input-group date" id='datetimepicker'>
+              <input type="text" class="form-control" value="<%= @date %>" name="date" placeholder="25/05/2017" autocomplete="off">
               <div class="input-group-addon">
                   <span class="glyphicon glyphicon-calendar"></span>
               </div>
               <%= content_for(:after_js) do %>
               <script type="text/javascript">
                   $(function () {
-                      $('#Datetimepicker').datetimepicker({ format: 'DD/MM/YYYY'});
+                      $('#datetimepicker').datetimepicker({ format: 'DD/MM/YYYY'});
                   });
               </script>
               <% end %>
           </div>
           <div class="input-group date" id="timepicker">
-          <input type="text" class="form-control margin-xs" name="start_time"  value="" placeholder="20:30">
+          <input type="text" class="form-control margin-xs" name="start_time"  value="<%= @start_time %>" placeholder="20:30" autocomplete="off">
           <div class="input-group-addon">
                   <span class="glyphicon glyphicon-time"></span>
               </div>
