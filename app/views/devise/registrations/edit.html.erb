@@ -9,6 +9,7 @@
       <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
     <% end %>
 
+
     <%= f.input :username, autocomplete: "on", placeholder: "Forest1", label:"User name", required: true %>
     <%= f.input :first_name, autocomplete: "on", placeholder: "Tom", required: true %>
     <%= f.input :last_name, autocomplete: "on", placeholder: "Hanks", required: true %>
@@ -17,8 +18,10 @@
     <%= f.input :age_pref_start, autocomplete: "off", label: "Age preferences from", placeholder: "30", required: true, input_html: { min: '18', step: 'any' }%>
     <%= f.input :age_pref_end, autocomplete: "off", label: "Age preferences end", placeholder: "35", required: true, input_html: { min: '18', step: 'any' } %>
     <%= f.input :gender_pref, collection: ["Female", "Male", "Both"], label: "Gender preferences", required: true %>
-    <%= f.input :hash_tag_pref, autocomplete: "off", placeholder: "#funnyperson", label: "Hash tag which describe you", required: true %>
+    <%= f.input :hash_tag_pref, autocomplete: "off", placeholder: "#funnyperson", label: "Hash tag which describe you", required: true, input_html: { value: @hash_tag_pref } %>
     <%= f.input :description, autocomplete: "off", placeholder: "I'm looking for nice person to talk.", label: "Describe you in few words (max 140 characters)", required: true, :max => 140, :min => 10 %>
+    <%= f.button :submit, 'Save your preferences', class: 'btn btn-primary' %>
+
 
 
 <% end %>
