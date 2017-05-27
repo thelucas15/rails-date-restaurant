@@ -16,8 +16,8 @@ Rails.application.routes.draw do
     resources :evaluations, only: [:show, :new, :create]
   end
 
-  resources :evaluations, only: [:show] do
-    resources :reservations, only: [:show] do
+  resources :evaluations, only: [:show, :create, :new] do
+    resources :reservations, only: [:show, :create, :new] do
     end
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
