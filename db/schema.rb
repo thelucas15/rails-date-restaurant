@@ -10,18 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170524151141) do
+ActiveRecord::Schema.define(version: 20170526153300) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "evaluations", force: :cascade do |t|
-    t.boolean "decision"
     t.bigint "match_list_id"
     t.bigint "restaurant_id"
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "selector"
+    t.boolean "selectee"
     t.index ["match_list_id"], name: "index_evaluations_on_match_list_id"
     t.index ["restaurant_id"], name: "index_evaluations_on_restaurant_id"
     t.index ["user_id"], name: "index_evaluations_on_user_id"
@@ -59,6 +60,8 @@ ActiveRecord::Schema.define(version: 20170524151141) do
     t.datetime "updated_at", null: false
     t.string "photo"
     t.string "description"
+    t.float "latitude"
+    t.float "longitude"
   end
 
   create_table "users", force: :cascade do |t|
@@ -74,7 +77,6 @@ ActiveRecord::Schema.define(version: 20170524151141) do
     t.inet "last_sign_in_ip"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "name"
     t.integer "age"
     t.integer "age_pref_start"
     t.integer "age_pref_end"
