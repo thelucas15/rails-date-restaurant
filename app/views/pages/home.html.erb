@@ -1,9 +1,4 @@
-<%= content_for(:special_navbar_class) do %>navbar-wagon-fixed<% end %>
 
-<div class="wrapper" id="home-banner" style="background-image: linear-gradient(135deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.2) 50%), url('<%= image_path(@image) %>');">
-  <div class="search-form text-center">
-    <div class="container">
+
       <%= render 'shared/search_form' %>
-    </div>
-  </div>
-</div>
+

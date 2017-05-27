@@ -7,7 +7,7 @@ class RestaurantsController < ApplicationController
    @date = params[:date]
    @start_time = params[:start_time]
 
-
+    byebug
     @restaurants = Restaurant.where(food_type: "mexican")
 
     @food_type = params[:food_type]
@@ -17,6 +17,7 @@ class RestaurantsController < ApplicationController
   end
 
   def show
+    @hash_tag_pref = session[:hash_tag_pref]
     @restaurant = Restaurant.find(params[:id])
     @match_list = MatchList.new
     #@user_in_list = @restaurant.match_lists.any? {|i| i.user == current_user}
