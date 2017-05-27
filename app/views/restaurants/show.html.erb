@@ -11,10 +11,11 @@
 </li>
 <li>
 
+
 <div class="restaurant center">
 <%= simple_form_for([@restaurant,@match_list]) do |f| %>
-<%= f.input :date %>
-<%= f.input :start_time %>
+<%= f.input :date , input_html: { value: @date} %>
+<%= f.input :start_time , input_html: { value: @start_time} %>
 <%= f.button :submit, 'Choose This Restaurant', class: 'btn btn-primary' %>
 <% end %>
 </div>
@@ -22,19 +23,25 @@
 
 </li>
 </ul>
-        <div class="matc center">
+        <div class="match center">
 
             <ul> <% @restaurant.match_lists.each do |i| %>
 
-            <% #if Dime.now.to_date == @i.user.date %>
                   <% if Time.now.to_date == i.date %>
                     <li>
-                     <%=  i.user.email  %>  <%= i.date %> <%= i.start_time %>
 
-                      <div class="invite hidden ">
+
+                     <%=  i.user.hash_tag_pref %>  <%= i.date %> <%= i.start_time %>
+                                         <%= image_tag "mary.png", {class: "avatar-large", alt: "user"}%>
+
+
+                  <% if  @user_match_list.any? %>
+
+                  <div class="invite center   ">
                      <%= link_to "Choose and Invite me", new_match_list_evaluation_path(i.restaurant), class: 'btn btn-primary' %>
                   </div>
-                   <div class="remove hidden">
+                    <% end %>
+                   <div class="remove center">
 
                     <%= link_to "Remove me from this list ", restaurant_match_list_path(i.restaurant,i),
                                 method: :delete,
@@ -47,5 +54,19 @@
             </ul>
 </div>
 
+<script>
+
+$( document ).ready(function() {
+
+         $("input .btn").on("click",function (e) {
+                    e.preventDefault();
+console.log("clicked");
+    $(".invite").removeClass('hidden');
+
+});
+
+});
+
+</script>
 
 
