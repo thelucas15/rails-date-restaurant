@@ -1,4 +1,5 @@
 
+<div class="container center">
 <h2> <%= @restaurant.name %>
 </h2>
 
@@ -31,17 +32,18 @@
                     <li>
 
 
-                     <%=  i.user.hash_tag_pref %>  <%= i.date %> <%= i.start_time %>
-                                         <%= image_tag "mary.png", {class: "avatar-large", alt: "user"}%>
+                      <%= i.date %> <%= i.start_time %>
+                    <%= image_tag "mary.png", {class: "avatar-large", alt: "user"}%>
 
 
                   <% if  @user_match_list.any? %>
 
-                  <div class="invite center   ">
+                  <div class="invite center-inline  ">
                      <%= link_to "Choose and Invite me", new_match_list_evaluation_path(i.restaurant), class: 'btn btn-primary' %>
                   </div>
                     <% end %>
-                   <div class="remove center">
+                   <div class="remove center center-inline">
+
 
                     <%= link_to "Remove me from this list ", restaurant_match_list_path(i.restaurant,i),
                                 method: :delete,
@@ -56,17 +58,8 @@
 
 <script>
 
-$( document ).ready(function() {
-
-         $("input .btn").on("click",function (e) {
-                    e.preventDefault();
-console.log("clicked");
-    $(".invite").removeClass('hidden');
-
-});
-
-});
 
 </script>
 
 
+</div>
