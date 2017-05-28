@@ -1,32 +1,19 @@
 <div class="container">
   <div class="row">
+    <div class="col-md-12">
     <form action="/restaurants" method="get" class="form-inline" name="Go!">
 
-          <div class="input-group date" id='datetimepicker'>
+          <div class="input-group date form_datetime" id='datepicker'>
               <input type="text" class="form-control" value="<%= @date %>" name="date" placeholder="25/05/2017" autocomplete="off">
               <div class="input-group-addon">
                   <span class="glyphicon glyphicon-calendar"></span>
               </div>
-              <%= content_for(:after_js) do %>
-              <script type="text/javascript">
-                  $(function () {
-                      $('#datetimepicker').datetimepicker({ format: 'DD/MM/YYYY'});
-                  });
-              </script>
-              <% end %>
           </div>
-          <div class="input-group date" id="timepicker">
+          <div class="input-group date form_datetime" id="timepicker">
           <input type="text" class="form-control margin-xs" name="start_time"  value="<%= @start_time %>" placeholder="20:30" autocomplete="off" >
           <div class="input-group-addon">
                   <span class="glyphicon glyphicon-time"></span>
               </div>
-          <%= content_for(:after_js) do %>
-              <script type="text/javascript">
-                  $(function () {
-                      $('#timepicker').datetimepicker( { format: 'LT'});
-                  });
-              </script>
-              <% end %>
           </div>
 
           <select name="food_type" class="form-control">
@@ -35,8 +22,27 @@
             <option type="text" value="japanese">Japanese</option>
             <option type="text" value="french">French</option>
           </select>
+
+
+          <input type="range" name="geolocation" id="points" value="50" min="18" max="120" data-popup-enabled="true">
+
           <input type="submit" value="Go!" class="btn btn-primary">
     </form>
-
   </div>
 </div>
+</div>
+<%= content_for(:after_js) do %>
+              <script type="text/javascript">
+                  $(function () {
+                        $('#datepicker').datetimepicker({
+                          format: 'DD/MM/YYYY',
+                          });
+                        $('#timepicker').datetimepicker({
+                          format: 'LT',
+                          });
+                        });
+                      </script>
+              <% end %>
+
+
+<!-- <input class='hidden' name='datehide' id='datehide' value='before'/> -->

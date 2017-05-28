@@ -60,6 +60,8 @@ ActiveRecord::Schema.define(version: 20170526153300) do
     t.datetime "updated_at", null: false
     t.string "photo"
     t.string "description"
+    t.float "latitude"
+    t.float "longitude"
   end
 
   create_table "users", force: :cascade do |t|
@@ -75,7 +77,6 @@ ActiveRecord::Schema.define(version: 20170526153300) do
     t.inet "last_sign_in_ip"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "name"
     t.integer "age"
     t.integer "age_pref_start"
     t.integer "age_pref_end"

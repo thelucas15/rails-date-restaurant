@@ -3,12 +3,6 @@ class RestaurantsController < ApplicationController
   def index
    # @restaurants = Restaurant.find_by_food_type(params[:food_type])
    # @food_type = params[:food_type "mexican"]
-   @food_type = "Mexican"
-   @date = params[:date]
-   @start_time = params[:start_time]
-
-
-    @restaurants = Restaurant.where(food_type: "mexican")
 
     @food_type = params[:food_type]
     @date = session[:date] = params[:date]
@@ -17,6 +11,8 @@ class RestaurantsController < ApplicationController
   end
 
   def show
+
+    @hash_tag_pref = session[:hash_tag_pref]
 
     @restaurant = Restaurant.find(params[:id])
     @match_list = MatchList.new()
