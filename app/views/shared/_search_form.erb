@@ -1,6 +1,6 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-12">
+    <div class="col-md-12 text-center">
     <form action="/restaurants" method="get" class="form-inline" name="Go!">
 
           <div class="input-group date form_datetime" id='datepicker'>
@@ -22,10 +22,12 @@
             <option type="text" value="japanese">Japanese</option>
             <option type="text" value="french">French</option>
           </select>
+          <br>
+          <input id="ex17a" type="text" name="range"/>
+          <!-- <input type="range" name="geolocation" id="points" value="50" min="18" max="120" data-popup-enabled="true">
 
-
-          <input type="range" name="geolocation" id="points" value="50" min="18" max="120" data-popup-enabled="true">
-
+ -->
+          <br>
           <input type="submit" value="Go!" class="btn btn-primary">
     </form>
   </div>
@@ -41,6 +43,13 @@
                           format: 'LT',
                           });
                         });
+
+                    $("#ex17a").slider({
+                        min: 1,
+                        max: 10,
+                        value: 1,
+                        tooltip_position:'bottom'
+                      });
                       </script>
               <% end %>
 
