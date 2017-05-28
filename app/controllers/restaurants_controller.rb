@@ -7,7 +7,6 @@ class RestaurantsController < ApplicationController
     @food_type = params[:food_type]
     @date = session[:date] = params[:date]
     @start_time = session[:start_time] = params[:start_time]
-      byebug
     @restaurants = Restaurant.where(food_type: @food_type)
   end
 
