@@ -2,8 +2,10 @@
  * Fonts
  * ------------------------------------- */
 // Google fonts
-@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,300,700|Raleway:400,100,300,700,500|Barrio");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,300,700|Raleway:400,100,300,700,500|Montserrat:400,700|Abril+Fatface|Barrio");
+
 $base-font: "Open Sans", "Helvetica", "sans-serif";
+$other-font: "Montserrat";
 $header-font: "Raleway", "Helvetica", "sans-serif";
 $title-font: "Barrio", "cursive";
 
