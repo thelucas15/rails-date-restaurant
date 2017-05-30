@@ -1,11 +1,6 @@
-/* --- Keep this sheet --- */
-/* --- Google Fonts --- */
-@import url("http://fonts.googleapis.com/css?family=Open+Sans:400,300,700|Montserrat:400,700|Abril+Fatface|Barrio");
-@import url("components/card.css");
-
 /* --- Fonts --- */
 body {
-  font-family: "Open Sans", "Helvetica", "sans-serif";
+  font-family: $base-font;
   padding-bottom: 200px;
   margin: 0;
   background: #F4F4F4;
