@@ -27,13 +27,7 @@ class RestaurantsController < ApplicationController
   end
 
   def show
-
-
     @hash_tag_pref = session[:hash_tag_pref]
-    @range = session[:range] = params[:range]
-    @food_type = params[:food_type]
-
-
     @restaurant = Restaurant.find(params[:id])
     authorize @restaurant
     @match_list = MatchList.new()
@@ -44,7 +38,7 @@ class RestaurantsController < ApplicationController
     @user_match_list = MatchList.where(user_id: current_user.id, restaurant_id: @restaurant.id)
   end
 
-  end
+
 
   def get_address
     if params[:user_location] == "My Location"
