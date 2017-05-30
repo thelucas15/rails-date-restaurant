@@ -87,6 +87,50 @@ users_attributes = [
     age_pref_end: 100
   },
   {
+    username:         "thelucas15",
+    age:      30,
+    age_pref_start:        18,
+    gender_pref: "female",
+    description: "Killing Volleyballs for life",
+    hash_tag_pref: "#BOSSMan",
+    email: " lukasz.zygadlo@gmail.com ",
+    password: "secret4",
+    age_pref_end: 30
+  },
+  {
+    username:         "mateBarey",
+    age:      30,
+    age_pref_start:        18,
+    gender_pref: "female",
+    description: "gettin it!",
+    hash_tag_pref: "#DonCUBASEscoBAR",
+    email: "georgeraulc@gmail.com",
+    password: "secret4",
+    age_pref_end: 30
+  },
+  {
+    username:         "marysaints",
+    age:      30,
+    age_pref_start:        18,
+    gender_pref: "female",
+    description: "Portuguese and gnarly",
+    hash_tag_pref: "#BLACKMamBA",
+    email: "mymarysaints@gmail.com ",
+    password: "secret4",
+    age_pref_end: 30
+  },
+  {
+    username:         "ricardo",
+    age:      30,
+    age_pref_start:        18,
+    gender_pref: "female",
+    description: "the epitamy of AWESOMENESS",
+    hash_tag_pref: "#BasicBADASS",
+    email: " rcostapinto@gmail.com ",
+    password: "secret4",
+    age_pref_end: 30
+  },
+  {
     username:         "stacy",
     age:      30,
     age_pref_start:        18,

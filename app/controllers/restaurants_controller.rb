@@ -7,6 +7,7 @@ class RestaurantsController < ApplicationController
     @food_type = params[:food_type]
     @date = session[:date] = params[:date]
     @start_time = session[:start_time] = params[:start_time]
+
     @range = session[:range] = params[:range]
     @user_location_requested = get_address
     @restaurants = Restaurant.near(@user_location_requested, @range.to_i).where(food_type: @food_type)
@@ -18,25 +19,30 @@ class RestaurantsController < ApplicationController
     end
 
     # @restaurants = Restaurant.where(food_type: @food_type)
+
+
+    @restaurants = policy_scope(Restaurant).where(food_type: @food_type)
+
+
   end
 
   def show
 
+
     @hash_tag_pref = session[:hash_tag_pref]
     @range = session[:range] = params[:range]
     @food_type = params[:food_type]
+
+
     @restaurant = Restaurant.find(params[:id])
+    authorize @restaurant
     @match_list = MatchList.new()
     @date = session[:date]
     @start_time = session[:start_time]
     @hash_tag_pref = current_user.hash_tag_pref
     #@user_in_list = @restaurant.match_lists.any? {|i| i.user == current_user}
-
     @user_match_list = MatchList.where(user_id: current_user.id, restaurant_id: @restaurant.id)
-
   end
-
-  def search
 
   end
 
