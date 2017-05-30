@@ -14,17 +14,20 @@
 
 
 <div class="restaurant center">
-<%= simple_form_for([@restaurant,@match_list]) do |f| %>
-<%= f.input :date , input_html: { value: @date} %>
-<%= f.input :start_time , input_html: { value: @start_time} %>
-<%= f.button :submit, 'Choose This Restaurant', class: 'btn btn-primary' %>
-<% end %>
+  <% if policy(MatchList).create? %>
+      <%= simple_form_for([@restaurant,@match_list]) do |f| %>
+      <%= f.input :date , input_html: { value: @date} %>
+      <%= f.input :start_time , input_html: { value: @start_time} %>
+      <%= f.button :submit, 'Choose This Restaurant', class: 'btn btn-primary' %>
+      <% end %>
+ <% end  %>
 </div>
 
 
 </li>
 </ul>
         <div class="match center">
+
 
             <ul> <% @restaurant.match_lists.each do |i| %>
 
@@ -44,13 +47,16 @@
                     <% end %>
                    <div class="remove center center-inline">
 
+                    <% if policy(i).destroy?%>
 
                     <%= link_to "Remove me from this list ", restaurant_match_list_path(i.restaurant,i),
                                 method: :delete,
                                  data: {confirm: "Are you sure?" }, class: 'btn btn-danger' %>
                     <% end %>
+                    <% end %>
                   </div>
-                     <% end %>
+                    <% end %>
+
               </li>
                <%# end  %>
             </ul>
