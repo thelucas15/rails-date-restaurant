@@ -5,7 +5,7 @@
 
 
           <div class="input-group">
-          <input type="text" class="form-control margin-xs" id="user-location" name="user_location" value="" placeholder="Address" autocomplete="off" required >
+          <input type="text" class="form-control margin-xs" id="user-location" name="user_location" value="<%= @user_location %>" placeholder="Address" autocomplete="off" required >
           <div class="input-group-addon pointer">
                   <span onclick="getLocation();" class="glyphicon glyphicon-map-marker"></span>
               </div>
@@ -24,13 +24,14 @@
               </div>
           </div>
 
-          <input  type="hidden" name='user_location_address' id='user-location-address' value=""/>
+          <input  type="hidden" name='user_location_address' id='user-location-address' value="<%= @user_location_address %>"/>
 
           <select name="food_type" class="form-control">
-            <option type="text" value="italian">Italian</option>
-            <option type="text" value="mexican">Mexican</option>
-            <option type="text" value="japanese">Japanese</option>
-            <option type="text" value="french">French</option>
+            <option type="text" value="">- Food Type</option>
+            <option type="text" value="italian" <% if @food_type == 'italian' %>selected="selected"<% end %>>Italian</option>
+            <option type="text" value="mexican" <% if @food_type == 'mexican' %>selected="selected"<% end %>>Mexican</option>
+            <option type="text" value="japanese" <% if @food_type == 'japanese' %>selected="selected"<% end %>>Japanese</option>
+            <option type="text" value="french" <% if @food_type == 'french' %>selected="selected"<% end %>>French</option>
           </select>
           <br>
           <input id="ex23" type="text" name="range" />
