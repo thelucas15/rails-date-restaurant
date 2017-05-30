@@ -47,6 +47,8 @@ class RestaurantsController < ApplicationController
       location_requested = params[:user_location]
     end
   end
+
+
   # def user_location_range
   #   @range = params[:range]
   #   @user_location_requested = get_address
