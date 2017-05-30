@@ -1,0 +1,5 @@
+<%= simple_form_for([restaurant,match_list]) do |f| %>
+<%= f.input :date , input_html: { value: @date} %>
+<%= f.input :start_time , input_html: { value: @start_time} %>
+<%= f.button :submit, 'Choose This Restaurant', class: 'btn btn-primary' %>
+<% end %>

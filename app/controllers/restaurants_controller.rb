@@ -44,7 +44,7 @@ class RestaurantsController < ApplicationController
     @user_match_list = MatchList.where(user_id: current_user.id, restaurant_id: @restaurant.id)
   end
 
-  end
+
 
   def get_address
     if params[:user_location] == "My Location"
@@ -59,4 +59,5 @@ class RestaurantsController < ApplicationController
   #   # loc = @user_location.split(",").map {|a| a.to_f } # [38.732656999999996, -9.1421262]
   #   @restaurants = Restaurant.near(@user_location_requested, @range.to_i).where(food_type: @food_type)
   # end
+
 end
