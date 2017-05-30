@@ -260,6 +260,7 @@ DEPENDENCIES
   gmaps4rails
   jbuilder (~> 2.0)
   jquery-rails
+  json (~> 2.1.0)
   listen (~> 3.0.5)
   momentjs-rails (>= 2.9.0)
   omniauth-facebook

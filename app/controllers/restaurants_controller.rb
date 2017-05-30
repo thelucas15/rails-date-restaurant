@@ -27,13 +27,7 @@ class RestaurantsController < ApplicationController
   end
 
   def show
-
-
     @hash_tag_pref = session[:hash_tag_pref]
-    @range = session[:range] = params[:range]
-    @food_type = params[:food_type]
-
-
     @restaurant = Restaurant.find(params[:id])
     authorize @restaurant
     @match_list = MatchList.new()
@@ -53,6 +47,8 @@ class RestaurantsController < ApplicationController
       location_requested = params[:user_location]
     end
   end
+
+
   # def user_location_range
   #   @range = params[:range]
   #   @user_location_requested = get_address

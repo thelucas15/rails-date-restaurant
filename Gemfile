@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 ruby '2.3.3'
 
 gem 'rails', '5.1.1'
+gem 'json', '~> 2.1.0'
 gem 'puma'
 gem 'pg'
 gem 'figaro'
@@ -22,7 +23,6 @@ gem 'momentjs-rails', '>= 2.9.0'
 gem 'bootstrap3-datetimepicker-rails', '~> 4.14.30'
 gem 'simple_form_extension'
 gem 'carrierwave', '~> 0.11.2'
-
 gem "geocoder"
 gem "coffee-rails"
 gem "gmaps4rails"
