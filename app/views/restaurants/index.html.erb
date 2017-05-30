@@ -1,11 +1,31 @@
 <div class="container">
     <%= render 'shared/search_form' %>
-    <h2><%= @food_type %></h2>
-    <div class="row">
-      <%= render @restaurants %>
+    <h2>Food Type: <%= @food_type %></h2>
+    <p>Your Location: <%= @user_location_requested %></p>
+    <div id="map" style="width: 100%; height: 250px;"></div>
 
-
-      <!-- build the html for listing cards and titles -->
-      </div>
-
+      <% content_for(:after_js) do %>
+        <%= javascript_tag do %>
+          $(document).ready(function() {
+            var handler = Gmaps.build('Google');
+            handler.buildMap({ internal: { id: 'map' } }, function() {
+              markers = handler.addMarkers(<%= raw @hash.to_json %>);
+              handler.bounds.extendWith(markers);
+              handler.fitMapToBounds();
+              if (markers.length == 0) {
+                handler.getMap().setZoom(2);
+              } else if (markers.length == 1) {
+                handler.getMap().setZoom(14);
+              }
+            });
+          });
+        <% end %>
+      <% end %>
 </div>
+<div class="container">
+  <div class="row">
+    <%= render @restaurants %>
+    <!-- build the html for listing cards and titles -->
+  </div>
+</div>
+
