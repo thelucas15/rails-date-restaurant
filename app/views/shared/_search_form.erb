@@ -5,20 +5,20 @@
 
 
           <div class="input-group">
-          <input type="text" class="form-control margin-xs" id="user-location" name="user_location" value="" placeholder="Address" autocomplete="off" >
+          <input type="text" class="form-control margin-xs" id="user-location" name="user_location" value="" placeholder="Address" autocomplete="off" required >
           <div class="input-group-addon pointer">
                   <span onclick="getLocation();" class="glyphicon glyphicon-map-marker"></span>
               </div>
           </div>
 
           <div class="input-group date form_datetime" id='datepicker'>
-              <input type="text" class="form-control" value="<%= @date %>" name="date" placeholder="27/03/12" autocomplete="off">
+              <input type="text" class="form-control" value="<%= @date %>" name="date" placeholder="27/03/12" autocomplete="off" required>
               <div class="input-group-addon">
                   <span class="glyphicon glyphicon-calendar"></span>
               </div>
           </div>
           <div class="input-group date form_datetime" id="timepicker">
-          <input type="text" class="form-control margin-xs" name="start_time"  value="<%= @start_time %>" placeholder="20:30" autocomplete="off" >
+          <input type="text" class="form-control margin-xs" name="start_time"  value="<%= @start_time %>" placeholder="20:30" autocomplete="off" required>
           <div class="input-group-addon">
                   <span class="glyphicon glyphicon-time"></span>
               </div>
