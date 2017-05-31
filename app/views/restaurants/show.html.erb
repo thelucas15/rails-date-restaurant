@@ -1,73 +1,62 @@
-
 <div class="container center">
 
+  <h2> <%= @restaurant.name %></h2>
+      <h4>
+        <div class="restaurant center">
+        <% if policy(MatchList).create? %>
+        <%= render 'match_lists/form', restaurant: @restaurant, match_list: @match_list %>
+        <% end  %>
+        </div>
+    </h3>
+   <ul>
+      <li>
+         <%= @restaurant.food_type %>
+    </li>
+  <li>
+   <%=  @restaurant.address %>
+ </li>
 
-<h2> <%= @restaurant.name %>
-</h2>
-
-<ul>
-<li>
-  <%= @restaurant.food_type %>
-</li>
-<li>
- <%=  @restaurant.address %>
-</li>
-<li>
-
-
-<div class="restaurant center">
-  <% if policy(MatchList).create? %>
-      <%= simple_form_for([@restaurant,@match_list]) do |f| %>
-      <%= f.input :date , input_html: { value: @date} %>
-      <%= f.input :start_time , input_html: { value: @start_time} %>
-      <%= f.button :submit, 'Choose This Restaurant', class: 'btn btn-primary' %>
-      <% end %>
- <% end  %>
+</ul>
+<div class="stuff">
+  <%# @restaurant.match_lists.each do |i,j| %>
+          <%# i.where(restaurant_id: params[:id]) %>
+          <%# end %>
 </div>
 
+<div class="match center">
+  <ul> <% @restaurant.match_lists.each do |i| %>
+      <% if Time.now.to_date == i.date %>
 
+      <li>
+          <%= i.date %> <%= i.start_time %>
+          <%= image_tag "http://lorempixel.com/100/100/people/", {class: "avatar-large", alt: "user"}%>
+
+
+          <% if  !@user_match_list.nil? && @user_match_list.any? %>
+
+        <div class="invite center-inline  ">
+           <%= link_to "Choose and Invite me", home_index_path, class: 'btn btn-primary' %>
+          </div>
+         <% end %>
+
+   <div class="remove center center-inline">
+    <% if policy(i).destroy?%>
+    <%= link_to "Remove me from this list ", restaurant_match_list_path(i.restaurant,i),
+    method: :delete,
+    data: {confirm: "Are you sure?" }, class: 'btn btn-danger' %>
+    <% end %>
+    <% end %>
+  </div>
+
+  <% end %>
+
+  <%= @count %>
 </li>
 </ul>
-        <div class="match center">
-
-
-            <ul> <% @restaurant.match_lists.each do |i| %>
-
-                  <% if Time.now.to_date == i.date %>
-                    <li>
-
-
-                      <%= i.date %> <%= i.start_time %>
-                    <%= image_tag "mary.png", {class: "avatar-large", alt: "user"}%>
-
-
-                  <% if  @user_match_list.any? %>
-
-                  <div class="invite center-inline  ">
-                     <%= link_to "Choose and Invite me", new_match_list_evaluation_path(i.restaurant), class: 'btn btn-primary' %>
-                  </div>
-                    <% end %>
-                   <div class="remove center center-inline">
-
-                    <% if policy(i).destroy?%>
-
-                    <%= link_to "Remove me from this list ", restaurant_match_list_path(i.restaurant,i),
-                                method: :delete,
-                                 data: {confirm: "Are you sure?" }, class: 'btn btn-danger' %>
-                    <% end %>
-                    <% end %>
-                  </div>
-                    <% end %>
-
-              </li>
-               <%# end  %>
-            </ul>
+</div>
 </div>
 
-<script>
 
-
-</script>
-
-
+<div class="back">
+<%= link_to "back", restaurants_path %>
 </div>

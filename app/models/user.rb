@@ -6,6 +6,8 @@ class User < ApplicationRecord
          :omniauthable, omniauth_providers: [:facebook]
 
   has_many :match_lists
+  has_many :messages
+  has_many :conversations, foreign_key: :sender_id
   validates :username, presence: true, uniqueness: true, on: :update
   validates :age, presence: true, on: :update
   validates :age_pref_start, presence: true, on: :update
@@ -34,4 +36,9 @@ class User < ApplicationRecord
     end
     return user
   end
+
+  def self.online_now
+    where("last_sign_in_at > ?", 15.minutes.ago)
+  end
+
 end
