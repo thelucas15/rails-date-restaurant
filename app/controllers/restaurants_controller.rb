@@ -8,7 +8,7 @@ class RestaurantsController < ApplicationController
     @date = params[:date]
     @start_time = params[:start_time]
 
-    @range = session[:range] = params[:range]
+    @range = params[:range]
 
     @user_location_address = params[:user_location_address]
     @user_location = params[:user_location]
@@ -29,7 +29,7 @@ class RestaurantsController < ApplicationController
   def show
     @restaurant = Restaurant.find(params[:id])
     @alert_message = "You are viewing #{@restaurant.name}"
-
+    @range = params[:range]
 
     @hash_tag_pref = session[:hash_tag_pref]
     @restaurant = Restaurant.find(params[:id])

@@ -1,23 +1,23 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-12 text-center">
+    <div class="col-md-12 text-center search-form">
     <form action="/restaurants" method="get" class="form-inline" name="Go!">
 
 
-          <div class="input-group">
+          <div class="input-group serach-labels">
           <input type="text" class="form-control margin-xs" id="user-location" name="user_location" value="<%= @user_location %>" placeholder="Address" autocomplete="off" required >
           <div class="input-group-addon pointer">
                   <span onclick="getLocation();" class="glyphicon glyphicon-map-marker"></span>
               </div>
           </div>
 
-          <div class="input-group date form_datetime" id='datepicker'>
+          <div class="input-group date form_datetime serach-labels" id='datepicker'>
               <input type="text" class="form-control" value="<%= @date %>" name="date" placeholder="27/03/12" autocomplete="off" required>
               <div class="input-group-addon">
                   <span class="glyphicon glyphicon-calendar"></span>
               </div>
           </div>
-          <div class="input-group date form_datetime" id="timepicker">
+          <div class="input-group date form_datetime serach-labels" id="timepicker">
           <input type="text" class="form-control margin-xs" name="start_time"  value="<%= @start_time %>" placeholder="20:30" autocomplete="off" required>
           <div class="input-group-addon">
                   <span class="glyphicon glyphicon-time"></span>
@@ -26,18 +26,24 @@
 
           <input  type="hidden" name='user_location_address' id='user-location-address' value="<%= @user_location_address %>"/>
 
-          <select name="food_type" class="form-control">
+          <!-- <select name="start_time" class="form-control" id="time-picker" onmousedown="if(this.options.length>5){this.size=5;}" onchange="this.blur()"  onblur="this.size=0;" >
+            <option type="text" value="">Pick Time</option>
+            <% Restaurant::HOURS.each do |hour| %>
+              <option type="text" value="<%=hour%>" <% if @start_time == hour %>selected="selected"<% end %>><%=hour%></option>
+            <% end %>
+          </select> -->
+          <select name="food_type" class="form-control serach-labels">
             <option type="text" value="">Food Type</option>
             <% Restaurant::FOOD_TYPES.each do |foodtype| %>
               <option type="text" value="<%=foodtype%>" <% if @food_type == foodtype %>selected="selected"<% end %>><%=foodtype.capitalize%></option>
             <% end %>
           </select>
           <br>
-          <input id="ex23" type="text" name="range" />
+          <input class="serach-labels" id="ex23" type="text" name="range" value="<%= @range %>" />
           <!-- <input type="range" name="geolocation" id="points" value="50" min="18" max="120" data-popup-enabled="true">
  -->
           <br>
-          <input  type="submit" value="Go!" class="btn btn-primary">
+          <input  type="submit" value="Go!" class="btn btn-go">
     </form>
   </div>
 </div>
@@ -47,7 +53,6 @@
                   $(function () {
                         $('#datepicker').datetimepicker({
                           format: 'DD/MM/YYYY',
-                          viewMode: 'years'
                           });
                         $('#timepicker').datetimepicker({
                           format: 'LT',
@@ -58,7 +63,7 @@
                   $("#ex23").slider({
                     ticks: [1, 3, 5],
                     ticks_labels: ['1 km', '3km', 'City'],
-                    value: 3,
+                    value: <%= @range || 3 %>,
                     ticks_tooltip: true,
                     step: 0.1,
                     tooltip_position:'bottom'

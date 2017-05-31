@@ -1,12 +1,6 @@
 
 <div class="container center">
-<% content_for(:after_js) do %>
-  <%= javascript_tag do %>
-    $(document).ready(function() {
-      alert('<%= j @alert_message %>');
-    });
-  <% end %>
-<% end %>
+
 
 <h2> <%= @restaurant.name %>
 </h2>
