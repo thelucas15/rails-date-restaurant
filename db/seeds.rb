@@ -7,25 +7,22 @@ restaurants_attributes = [
   {
     name:         "Pistola y Corazon",
     address:      "Rua da Boavista 16, Lisboa 1200-067, Portugal",
-    food_type:    "mexican",
-    description:  "Comida Mexicana",
-    rating:       4,
-    photo: "https://www.washingtonian.com/wp-content/uploads/2016/12/empanada2.jpg.optimal.jpg"
+    food_type: "mexican",
+    description: "Comida Mexicana",
+    photo: 'https://www.washingtonian.com/wp-content/uploads/2016/12/empanada2.jpg.optimal.jpg'
   },
   {
     name:         "El Clandestino",
     address:      "Rua da Rosa 321, Lisboa 1200-386, Portugal",
     food_type:    "mexican",
     description:  "Mexicana, Peruano, Latino",
-    rating:       5,
-    photo: "https://static-communitytable.parade.com/wp-content/uploads/2016/01/MexicanPizza-H.jpg"
+    photo: 'https://static-communitytable.parade.com/wp-content/uploads/2016/01/MexicanPizza-H.jpg'
   },
   {
     name:         "Lisboète",
     address:      "Calçada Marquês Abrantes 94 1200-720 Lisboa Portugal",
     food_type:    "french",
     description:  "French Cuisine",
-    rating:       5,
     photo: "https://u.tfstatic.com/restaurant_photos/933/64933/169/612/lisboete-sala-0f4d2.jpg"
   },
   {
@@ -33,7 +30,6 @@ restaurants_attributes = [
     address:      "Cais da Viscondessa - Santos 1200-109 Lisboa Portugal",
     food_type:    "japanese",
     description:  "Japanese Cuisine",
-    rating:       5,
     photo:"https://u.tfstatic.com/restaurant_photos/691/66691/169/612/sakana-restaurante-bar-sushi-interior-3b300.jpg"
   },
   {
@@ -41,7 +37,6 @@ restaurants_attributes = [
     address:      "Passeio Maritimo de Alges, Edificio La Siesta, Lisboa 1400-039, Portugal",
     food_type:    "mexican",
     description:  "Mexicana Da América Central Latino Fast food Grill",
-    rating:       3,
     photo: "http://www.abuelos.com/assets/uploads/2014/09/Lunch_Mexican_Stack-800x600-c-center.jpg"
   },
   {
@@ -49,7 +44,6 @@ restaurants_attributes = [
     address:      "Rua dos Remolares 34 1200-371 Lisboa Portuga",
     food_type:    "mexican",
     description:  "Comida Mexicana",
-    rating: 4,
     photo:"https://u.tfstatic.com/restaurant_photos/722/64722/169/612/las-ficheras-sala-0bb2e.jpg"
   },
   {
@@ -57,7 +51,6 @@ restaurants_attributes = [
     address:      "Av. Infante Dom Henrique Armazém B, Cais da Pedra, Santa Apolónia 1900-436 Lisboa Portugal",
     food_type:    "japanese",
     description:  "Japanese Cuisine",
-    rating: 5,
     photo:"https://u.tfstatic.com/restaurant_photos/838/66838/169/612/bica-do-sapato-sushi-bar-sala-1f1ca.jpg"
   },
   {
@@ -65,7 +58,6 @@ restaurants_attributes = [
     address:      "Rua Engenheiro Vieira da Silva 2 1050-105 Lisboa Portugal",
     food_type:    "japanese",
     description:  "Japanese Cuisine",
-    rating: 5,
     photo:"https://u.tfstatic.com/restaurant_photos/745/66745/169/612/bonsai-sala-5f99e.jpg"
   },
   {
@@ -73,7 +65,7 @@ restaurants_attributes = [
     address:      "Rua Luís Pastor Macedo, 6A 1750-158 Lisboa Portugal",
     food_type:    "japanese",
     description:  "Japanese Cuisine",
-    rating:       5,
+
     photo:"https://u.tfstatic.com/restaurant_photos/933/291933/169/612/edo-sushi-lumiar-sala-do-restaurante-ab384.jpg"
   },
   {
@@ -81,7 +73,7 @@ restaurants_attributes = [
     address:      "Av.Infante Santo 60B 1350-179 Lisboa Portugal",
     food_type:    "japanese",
     description:  "Japanese Cuisine",
-    rating:       4,
+
     photo:"https://u.tfstatic.com/restaurant_photos/613/66613/169/612/sakura-infante-santo-sala-ffff3.jpg"
   },
   {
@@ -89,7 +81,7 @@ restaurants_attributes = [
     address:      "Rua São Bento 107, Lisboa 1200-109, Portugal",
     food_type:    "italian",
     description:  "Comida tradicional Italiana",
-    rating:       5,
+
     photo:"https://u.tfstatic.com/restaurant_photos/004/65004/169/612/bebel-ristorante-italiano-prato-0f7be.jpg"
   },
   {
@@ -97,7 +89,7 @@ restaurants_attributes = [
     address:      "Rua Olival 258, Lisboa 1200-744, Portugal",
     food_type:    "italian",
     description:  "Comida tradicional Italiana",
-    rating:       5,
+
     photo:"https://u.tfstatic.com/restaurant_photos/180/73180/169/612/come-prima-sala-entrada-f9c66.jpg"
   },
   {
@@ -105,7 +97,7 @@ restaurants_attributes = [
     address:    "Rua Fradesso da Silveira, Nº2 Lj-B, 1300-609 Lisboa Portugal",
     food_type:   "italian",
     description: "Pizzas Italianas",
-    rating:      5,
+
     photo:"https://u.tfstatic.com/restaurant_photos/095/65095/169/612/pizzaria-divinos-prazeres-63789.jpg"
   },
   {
@@ -113,7 +105,7 @@ restaurants_attributes = [
     address:    "Rua Duque de Palmela, 32 H. PortoBay Marquês Lisboa 1250-096, Portugal",
     food_type:   "italian",
     description: "Cozinha Italiana",
-    rating:      5,
+
     photo:"https://u.tfstatic.com/restaurant_photos/449/217449/169/612/trattoria-32-vista-da-sala-3a2a5.jpg"
   },
   {
@@ -121,7 +113,7 @@ restaurants_attributes = [
     address:    "Rua das Portas de Santo Antão 31 e 37, Lisboa 1150-264, Portugal",
     food_type:   "italian",
     description: "Cozinha Italiana",
-    rating:      5,
+
     photo:"https://u.tfstatic.com/restaurant_photos/951/301951/169/612/ciao-milano-vista-da-sala-92a31.jpg"
   },
   {
@@ -129,7 +121,7 @@ restaurants_attributes = [
     address:    "Rua Nova da Trindade 10C, Lisboa 1200-302, Portugal ",
     food_type:   "italian",
     description: "Cozinha Italiana",
-    rating:      5,
+
     photo:"https://u.tfstatic.com/restaurant_photos/730/77730/169/612/limoncello-cantina-28349.jpg"
   },
   {
@@ -137,7 +129,7 @@ restaurants_attributes = [
     address:    "R. Latino Coelho 23 1050-010 Lisboa Portugal",
     food_type:  "japanese",
     description: "Japanese Cuisine",
-    rating:       5,
+
     photo:"https://u.tfstatic.com/restaurant_photos/916/71916/169/612/tsubaki-sala-a89cf.jpg"
   }
 ]

@@ -1,0 +1,21 @@
+.btn-go {
+  -webkit-border-radius: 4;
+  -moz-border-radius: 4;
+  border-radius: 4px;
+  font-family: Arial;
+  font-weight: bold;
+  color: #ffffff;
+  font-size: 16px;
+  background: #008fd5;
+  padding: 10px 50px 10px 50px;
+  text-decoration: none;
+  transition: background 0.3s ease;
+  margin-top: 20px;
+}
+
+.btn-go:hover {
+  opacity: 1;
+    background: #009ce9;
+    text-decoration: none;
+    color: white;
+}

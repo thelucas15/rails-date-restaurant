@@ -1,16 +1,12 @@
 class PagesController < ApplicationController
   def home
     @image = [
-      "rachael-gorjestani-154908.jpg",
-      "dan-gold-105699.jpg",
-      "matthew-henry-86779.jpg",
-      "matthew-henry-86779.jpg",
-      "seemi-samuel-15564.jpg",
-      "serge-esteve-5821.jpg",
-      "tegan-mierle-157974.jpg",
-      "ali-inay-9858.jpg",
-      "michael-discenza-199756.jpg",
-      "dave-lastovskiy-127581.jpg"
+      "background1.png",
+      "background2.png",
+      "background3.png",
+      "background4.png",
+      "background5.png",
+      "background6.png",
     ].sample
   end
 end
