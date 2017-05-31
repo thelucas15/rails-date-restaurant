@@ -27,11 +27,10 @@
           <input  type="hidden" name='user_location_address' id='user-location-address' value="<%= @user_location_address %>"/>
 
           <select name="food_type" class="form-control">
-            <option type="text" value="">- Food Type</option>
-            <option type="text" value="italian" <% if @food_type == 'italian' %>selected="selected"<% end %>>Italian</option>
-            <option type="text" value="mexican" <% if @food_type == 'mexican' %>selected="selected"<% end %>>Mexican</option>
-            <option type="text" value="japanese" <% if @food_type == 'japanese' %>selected="selected"<% end %>>Japanese</option>
-            <option type="text" value="french" <% if @food_type == 'french' %>selected="selected"<% end %>>French</option>
+            <option type="text" value="">Food Type</option>
+            <% Restaurant::FOOD_TYPES.each do |foodtype| %>
+              <option type="text" value="<%=foodtype%>" <% if @food_type == foodtype %>selected="selected"<% end %>><%=foodtype.capitalize%></option>
+            <% end %>
           </select>
           <br>
           <input id="ex23" type="text" name="range" />
@@ -48,9 +47,11 @@
                   $(function () {
                         $('#datepicker').datetimepicker({
                           format: 'DD/MM/YYYY',
+                          viewMode: 'years'
                           });
                         $('#timepicker').datetimepicker({
                           format: 'LT',
+
                           });
                       });
 

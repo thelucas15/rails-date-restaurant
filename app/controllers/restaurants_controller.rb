@@ -14,19 +14,15 @@ class RestaurantsController < ApplicationController
     @user_location = params[:user_location]
 
     @user_location_requested = get_address
-    @restaurants = Restaurant.near(@user_location_requested, @range.to_i).where(food_type: @food_type)
+    @restaurants = policy_scope(Restaurant).near(@user_location_requested, @range.to_i).where(food_type: @food_type)
 
     @hash = Gmaps4rails.build_markers(@restaurants) do |restaurant, marker|
       marker.lat restaurant.latitude
       marker.lng restaurant.longitude
-      # marker.infowindow render_to_string(partial: "/flats/map_box", locals: { flat: flat })
+      marker.infowindow render_to_string(partial: "/shared/restaurant_map_box", locals: { restaurant: restaurant })
     end
 
     # @restaurants = Restaurant.where(food_type: @food_type)
-
-
-    @restaurants = policy_scope(Restaurant).where(food_type: @food_type)
-
 
   end
 
