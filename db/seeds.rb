@@ -7,8 +7,8 @@ restaurants_attributes = [
   {
     name:         "Pistola y Corazon",
     address:      "Rua da Boavista 16, Lisboa 1200-067, Portugal",
-    food_type:        "mexican",
-    description: "Comida Mexicana",
+    food_type:    "mexican",
+    description:  "Comida Mexicana",
     rating:       4,
     photo: "https://www.washingtonian.com/wp-content/uploads/2016/12/empanada2.jpg.optimal.jpg"
   },
@@ -21,68 +21,124 @@ restaurants_attributes = [
     photo: "https://static-communitytable.parade.com/wp-content/uploads/2016/01/MexicanPizza-H.jpg"
   },
   {
-    name:         "Le pré catelan",
-    address:      "route de Suresnes 75016 Paris",
+    name:         "Lisboète",
+    address:      "Calçada Marquês Abrantes 94 1200-720 Lisboa Portugal",
     food_type:    "french",
     description:  "French Cuisine",
     rating:       5,
-    photo: "https://www.google.pt/maps/uv?hl=pt-PT&pb=!1s0x47e66536ab659f5d:0xa21511121b2782c4!2m19!2m2!1i80!2i80!3m1!2i20!16m13!1b1!2m2!1m1!1e1!2m2!1m1!1e3!2m2!1m1!1e5!2m2!1m1!1e4!3m1!7e115!4shttps://picasaweb.google.com/lh/sredir?uname%3D102746373717847039852%26id%3D6225280981537468802%26target%3DPHOTO!5sle+pre+catelan+-+Pesquisa+Google&imagekey=!1e3!2s-NqRfUTUEcWI/VmSkEduJMYI/AAAAAAAACgM/skew2gO2Rr477-RvxRJQ1ybp1PtKw34EQCJkC&sa=X&ved=0ahUKEwjC6rjV_pfUAhWHMBoKHazPC24QoioIkwEwDg"
+    photo: "https://u.tfstatic.com/restaurant_photos/933/64933/169/612/lisboete-sala-0f4d2.jpg"
   },
   {
-    name:         "Le pré",
-    address:      "route de Suresnes 7",
-    food_type:    "french",
-    description: "French food",
-    rating:       3,
-    photo: "https://www.google.pt/maps/uv?hl=pt-PT&pb=!1s0x47f71a21a508f5f3%3A0x379a3b0ec9a53977!2m19!2m2!1i80!2i80!3m1!2i20!16m13!1b1!2m2!1m1!1e1!2m2!1m1!1e3!2m2!1m1!1e5!2m2!1m1!1e4!3m1!7e115!4shttps%3A%2F%2Fpicasaweb.google.com%2Flh%2Fsredir%3Funame%3D111999074317881192109%26id%3D6109664477711908690%26target%3DPHOTO!5sle%20pr%C3%A9%20restaurant%20-%20Pesquisa%20Google&imagekey=!1e3!2s-gQpJq-VnT2s%2FWEF0bckbNWI%2FAAAAAAAAACI%2Fbb37kN9isPMmq74gbyloz24Ca5u6dRs7wCLIB&sa=X&sqi=2&ved=0ahUKEwj_ucbuhZjUAhUBvxQKHftDBtQQoioIhQEwCg"
+    name:         "Sakana Restaurante Bar Sushi",
+    address:      "Cais da Viscondessa - Santos 1200-109 Lisboa Portugal",
+    food_type:    "japanese",
+    description:  "Japanese Cuisine",
+    rating:       5,
+    photo:"https://u.tfstatic.com/restaurant_photos/691/66691/169/612/sakana-restaurante-bar-sushi-interior-3b300.jpg"
   },
   {
     name:         "La Siesta",
     address:      "Passeio Maritimo de Alges, Edificio La Siesta, Lisboa 1400-039, Portugal",
-    food_type:        "mexican",
-    description: "Mexicana Da América Central Latino Fast food Grill",
+    food_type:    "mexican",
+    description:  "Mexicana Da América Central Latino Fast food Grill",
     rating:       3,
     photo: "http://www.abuelos.com/assets/uploads/2014/09/Lunch_Mexican_Stack-800x600-c-center.jpg"
-  }
+  },
   {
-    name:         "Taberna Portuguesa",
-    address:      "Calçada do combro 115, Lisboa 1200-024, Portugal",
-    food_type:    "Portuguese",
-    description:  "Petiscos tradicionais Portugueses",
+    name:         "Las Ficheras",
+    address:      "Rua dos Remolares 34 1200-371 Lisboa Portuga",
+    food_type:    "mexican",
+    description:  "Comida Mexicana",
+    rating: 4,
+    photo:"https://u.tfstatic.com/restaurant_photos/722/64722/169/612/las-ficheras-sala-0bb2e.jpg"
+  },
+  {
+    name:         "Bica do Sapato - Sushi Bar",
+    address:      "Av. Infante Dom Henrique Armazém B, Cais da Pedra, Santa Apolónia 1900-436 Lisboa Portugal",
+    food_type:    "japanese",
+    description:  "Japanese Cuisine",
+    rating: 5,
+    photo:"https://u.tfstatic.com/restaurant_photos/838/66838/169/612/bica-do-sapato-sushi-bar-sala-1f1ca.jpg"
+  },
+  {
+    name:         "Bonsai",
+    address:      "Rua Engenheiro Vieira da Silva 2 1050-105 Lisboa Portugal",
+    food_type:    "japanese",
+    description:  "Japanese Cuisine",
+    rating: 5,
+    photo:"https://u.tfstatic.com/restaurant_photos/745/66745/169/612/bonsai-sala-5f99e.jpg"
+  },
+  {
+    name:         "Edo Sushi Lumiar",
+    address:      "Rua Luís Pastor Macedo, 6A 1750-158 Lisboa Portugal",
+    food_type:    "japanese",
+    description:  "Japanese Cuisine",
     rating:       5,
-    photo: "https://www.zomato.com/photos/pv-res-8200771-r_NTgxNDU3MzI2Nj"
-  }
+    photo:"https://u.tfstatic.com/restaurant_photos/933/291933/169/612/edo-sushi-lumiar-sala-do-restaurante-ab384.jpg"
+  },
   {
-    name:         "Sakura Restaurante Japones Picoas",
-    address:      "Rua Sousa Martins 7, Lisboa 1050 Lisboa Portugal",
-    food_type:    "Japanese",
-    description:  "Sushi, Sashimi e Teppanyaki",
+    name:         "Sakura Infante Santo",
+    address:      "Av.Infante Santo 60B 1350-179 Lisboa Portugal",
+    food_type:    "japanese",
+    description:  "Japanese Cuisine",
     rating:       4,
-    photo: "http://sakura-restaurante.com/sakura-picoas"
-  }
+    photo:"https://u.tfstatic.com/restaurant_photos/613/66613/169/612/sakura-infante-santo-sala-ffff3.jpg"
+  },
   {
     name:         "Il Matricciano",
     address:      "Rua São Bento 107, Lisboa 1200-109, Portugal",
-    food_type:    "Italian",
+    food_type:    "italian",
     description:  "Comida tradicional Italiana",
     rating:       5,
-    photo: "https://www.google.pt/maps/uv?hl=pt-PT&pb=!1s0xd1934827402fb0d%3A0x61b93e109455fefa!2m19!2m2!1i80!2i80!3m1!2i20!16m13!1b1!2m2!1m1!1e1!2m2!1m1!1e3!2m2!1m1!1e5!2m2!1m1!1e4!3m1!7e115!4shttps%3A%2F%2Fpicasaweb.google.com%2Flh%2Fsredir%3Funame%3D116705096139744561210%26id%3D6396409040465722770%26target%3DPHOTO!5sil%20matriciano%20-%20Pesquisa%20Google&imagekey=!1e3!2s-w9484n5RblU%2FWMScIJYVHmI%2FAAAAAAAAfWY%2FR5JHKSOJhkU7OAUQkuMUmg7yfjMV4CwdwCLIB&sa=X&ved=0ahUKEwjxhdGf-pfUAhWJlxoKHcYNC9MQoioIhQEwCg"
-  }
+    photo:"https://u.tfstatic.com/restaurant_photos/004/65004/169/612/bebel-ristorante-italiano-prato-0f7be.jpg"
+  },
   {
     name:         "Come Prima",
     address:      "Rua Olival 258, Lisboa 1200-744, Portugal",
-    food_type:    "Italian",
+    food_type:    "italian",
     description:  "Comida tradicional Italiana",
     rating:       5,
-    photo: "https://www.google.pt/maps/uv?hl=pt-PT&pb=!1s0xd193498bf904399%3A0x33c494d1e2a87841!2m19!2m2!1i80!2i80!3m1!2i20!16m13!1b1!2m2!1m1!1e1!2m2!1m1!1e3!2m2!1m1!1e5!2m2!1m1!1e4!3m1!7e115!4shttps%3A%2F%2Fpicasaweb.google.com%2Flh%2Fsredir%3Funame%3D116819725772433021019%26id%3D6244467262471442146%26target%3DPHOTO!5s%20-%20Pesquisa%20Google&imagekey=!1e3!2s-YQXOgRGm48I%2FVNvEB1W6ViI%2FAAAAAAAAAJ0%2Fv_XBTXp-GN4rHHr5xks8P4izdBx9zyW-ACJkC"
-  }
+    photo:"https://u.tfstatic.com/restaurant_photos/180/73180/169/612/come-prima-sala-entrada-f9c66.jpg"
+  },
   {
-    name:       "Restaurante Casanova",
-    address:    "Av.Infante Dom Henrique Loja 7, Lisboa 1900-264, Portugal",
-    food_type:   "Italian",
+    name:       "Pizzaria Divinos Prazeres",
+    address:    "Rua Fradesso da Silveira, Nº2 Lj-B, 1300-609 Lisboa Portugal",
+    food_type:   "italian",
     description: "Pizzas Italianas",
     rating:      5,
-    photo: "https://www.google.pt/maps/uv?hl=pt-PT&pb=!1s0xd1bc7bd1c840f09%3A0xcae3347c2a6cf3f8!2m19!2m2!1i80!2i80!3m1!2i20!16m13!1b1!2m2!1m1!1e1!2m2!1m1!1e3!2m2!1m1!1e5!2m2!1m1!1e4!3m1!7e115!4shttps%3A%2F%2Fpicasaweb.google.com%2Flh%2Fsredir%3Funame%3D118266073311340130572%26id%3D6386268536816778162%26target%3DPHOTO!5s%20-%20Pesquisa%20Google&imagekey=!1e3!2s-2kbVes8_uLU%2FWKCVZfk3u7I%2FAAAAAAAAAx0%2FYpPmzt7KEccpevwM_YprGiEhHLhw1b0wACLIB"
+    photo:"https://u.tfstatic.com/restaurant_photos/095/65095/169/612/pizzaria-divinos-prazeres-63789.jpg"
+  },
+  {
+    name:       "Trato 32",
+    address:    "Rua Duque de Palmela, 32 H. PortoBay Marquês Lisboa 1250-096, Portugal",
+    food_type:   "italian",
+    description: "Cozinha Italiana",
+    rating:      5,
+    photo:"https://u.tfstatic.com/restaurant_photos/449/217449/169/612/trattoria-32-vista-da-sala-3a2a5.jpg"
+  },
+  {
+    name:       "Ciao Milano",
+    address:    "Rua das Portas de Santo Antão 31 e 37, Lisboa 1150-264, Portugal",
+    food_type:   "italian",
+    description: "Cozinha Italiana",
+    rating:      5,
+    photo:"https://u.tfstatic.com/restaurant_photos/951/301951/169/612/ciao-milano-vista-da-sala-92a31.jpg"
+  },
+  {
+    name:       "Limoncello",
+    address:    "Rua Nova da Trindade 10C, Lisboa 1200-302, Portugal ",
+    food_type:   "italian",
+    description: "Cozinha Italiana",
+    rating:      5,
+    photo:"https://u.tfstatic.com/restaurant_photos/730/77730/169/612/limoncello-cantina-28349.jpg"
+  },
+  {
+    name:       "Tsubaki",
+    address:    "R. Latino Coelho 23 1050-010 Lisboa Portugal",
+    food_type:  "japanese",
+    description: "Japanese Cuisine",
+    rating:       5,
+    photo:"https://u.tfstatic.com/restaurant_photos/916/71916/169/612/tsubaki-sala-a89cf.jpg"
   }
 ]
 Restaurant.create!(restaurants_attributes)
