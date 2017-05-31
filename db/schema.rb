@@ -10,10 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170530143200) do
+ActiveRecord::Schema.define(version: 20170531101525) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "conversations", force: :cascade do |t|
+    t.integer "recipient_id"
+    t.integer "sender_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["recipient_id", "sender_id"], name: "index_conversations_on_recipient_id_and_sender_id", unique: true
+  end
 
   create_table "evaluations", force: :cascade do |t|
     t.bigint "match_list_id"
@@ -37,6 +45,16 @@ ActiveRecord::Schema.define(version: 20170530143200) do
     t.date "date"
     t.index ["restaurant_id"], name: "index_match_lists_on_restaurant_id"
     t.index ["user_id"], name: "index_match_lists_on_user_id"
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.text "body"
+    t.bigint "user_id"
+    t.bigint "conversation_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["conversation_id"], name: "index_messages_on_conversation_id"
+    t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
   create_table "reservations", force: :cascade do |t|
@@ -103,6 +121,8 @@ ActiveRecord::Schema.define(version: 20170530143200) do
   add_foreign_key "evaluations", "users"
   add_foreign_key "match_lists", "restaurants"
   add_foreign_key "match_lists", "users"
+  add_foreign_key "messages", "conversations"
+  add_foreign_key "messages", "users"
   add_foreign_key "reservations", "evaluations"
   add_foreign_key "reservations", "match_lists"
   add_foreign_key "reservations", "restaurants"

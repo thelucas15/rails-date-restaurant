@@ -1,30 +1,33 @@
 class RestaurantsController < ApplicationController
 
   def index
-   # @restaurants = Restaurant.find_by_food_type(params[:food_type])
-   # @food_type = params[:food_type "mexican"]
+       # @restaurants = Restaurant.find_by_food_type(params[:food_type])
+       # @food_type = params[:food_type "mexican"]
 
-    @food_type = params[:food_type]
-    @date = session[:date] = params[:date]
-    @start_time = session[:start_time] = params[:start_time]
+        @food_type = params[:food_type]
+        @date = session[:date] = params[:date]
+        @start_time = session[:start_time] = params[:start_time]
 
-    @range = session[:range] = params[:range]
-    @user_location_requested = get_address
-    @restaurants = Restaurant.near(@user_location_requested, @range.to_i).where(food_type: @food_type)
+        @range = session[:range] = params[:range]
+        @user_location_requested = get_address
+        @restaurants = Restaurant.near(@user_location_requested, @range.to_i).where(food_type: @food_type)
 
-    @hash = Gmaps4rails.build_markers(@restaurants) do |restaurant, marker|
-      marker.lat restaurant.latitude
-      marker.lng restaurant.longitude
-      # marker.infowindow render_to_string(partial: "/flats/map_box", locals: { flat: flat })
-    end
+        @hash = Gmaps4rails.build_markers(@restaurants) do |restaurant, marker|
+          marker.lat restaurant.latitude
+          marker.lng restaurant.longitude
+          # marker.infowindow render_to_string(partial: "/flats/map_box", locals: { flat: flat })
 
-    # @restaurants = Restaurant.where(food_type: @food_type)
+        # @restaurants = Restaurant.where(food_type: @food_type)
 
+      end
+        @restaurants = policy_scope(Restaurant).where(food_type: @food_type)
 
-    @restaurants = policy_scope(Restaurant).where(food_type: @food_type)
 
 
   end
+
+
+
 
   def show
     @hash_tag_pref = session[:hash_tag_pref]
@@ -36,6 +39,7 @@ class RestaurantsController < ApplicationController
     @hash_tag_pref = current_user.hash_tag_pref
     #@user_in_list = @restaurant.match_lists.any? {|i| i.user == current_user}
     @user_match_list = MatchList.where(user_id: current_user.id, restaurant_id: @restaurant.id)
+   # @count = MatchList.all.where(restaurant_id: Restaurant[params[:id]]).length
   end
 
 

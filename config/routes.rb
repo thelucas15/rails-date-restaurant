@@ -1,4 +1,13 @@
 Rails.application.routes.draw do
+  get 'home/index'
+
+  resources :conversations, only: [:create] do
+    member do
+      post :close
+    end
+    resources :messages, only: [:create]
+  end
+
   get 'about', to: 'pages#about'
 
   get 'contact', to: 'pages#contact'
@@ -13,7 +22,7 @@ Rails.application.routes.draw do
   end
 
   resources :match_lists do
-    resources :evaluations, only: [:show, :new, :create]
+    resources :evaluations, only: [:show, :new, :create, :index]
   end
 
   resources :evaluations, only: [:show, :create, :new] do
