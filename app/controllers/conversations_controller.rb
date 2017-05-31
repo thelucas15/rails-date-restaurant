@@ -1,5 +1,4 @@
 class ConversationsController < ApplicationController
-  skip_after_action :verify_policy_scoped, only: :create, :add_to_conversations, :conversated?
 
   def create
     @conversation = Conversation.get(current_user.id, params[:user_id])

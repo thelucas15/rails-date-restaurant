@@ -36,4 +36,9 @@ class User < ApplicationRecord
     end
     return user
   end
+
+  def self.online_now
+    where("last_sign_in_at > ?", 15.minutes.ago)
+  end
+
 end

@@ -27,13 +27,13 @@
 
       <li>
           <%= i.date %> <%= i.start_time %>
-          <%= image_tag "mary.png", {class: "avatar-large", alt: "user"}%>
+          <%= image_tag "http://lorempixel.com/100/100/people/", {class: "avatar-large", alt: "user"}%>
 
 
           <% if  !@user_match_list.nil? && @user_match_list.any? %>
 
         <div class="invite center-inline  ">
-           <%= link_to "Choose and Invite me", new_match_list_evaluation_path(i.restaurant), class: 'btn btn-primary' %>
+           <%= link_to "Choose and Invite me", home_index_path, class: 'btn btn-primary' %>
           </div>
          <% end %>
 
