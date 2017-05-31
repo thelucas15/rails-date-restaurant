@@ -24,7 +24,7 @@
       </div>
 
     <!--   <a class="card-link" href="#" ></a> -->
-    <%= link_to restaurant.name, restaurant_path(restaurant) %>
+    <%= link_to restaurant.name, restaurant_path(restaurant, date: @date, start_time: @start_time) %>
   </div>
 </div>
 
