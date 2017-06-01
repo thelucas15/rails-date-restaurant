@@ -1,62 +1,50 @@
 <div class="container center">
-
   <h2> <%= @restaurant.name %></h2>
-      <h4>
+      <h3>
         <div class="restaurant center">
-        <% if policy(MatchList).create? %>
-        <%= render 'match_lists/form', restaurant: @restaurant, match_list: @match_list %>
-        <% end  %>
+          <% if policy(MatchList).create? %>
+          <%= render 'match_lists/form', restaurant: @restaurant, match_list: @match_list %>
+          <% end  %>
         </div>
-    </h3>
-   <ul>
-      <li>
-         <%= @restaurant.food_type %>
-    </li>
-  <li>
-   <%=  @restaurant.address %>
- </li>
+     </h3>
+     <ul>
+        <li>
+            <%= @restaurant.food_type %>
+        </li>
+         <li>
+           <%=  @restaurant.address %>
+        </li>
+     </ul>
 
-</ul>
-<div class="stuff">
-  <%# @restaurant.match_lists.each do |i,j| %>
-          <%# i.where(restaurant_id: params[:id]) %>
-          <%# end %>
-</div>
+    <div class="match center">
+       <ul> <% @restaurant.match_lists.each do |i| %>
+            <% if Time.now.to_date == i.date %>
 
-<div class="match center">
-  <ul> <% @restaurant.match_lists.each do |i| %>
-      <% if Time.now.to_date == i.date %>
+            <li>
+                <%= i.date %> <%= i.start_time %>
+                <%= image_tag "http://lorempixel.com/100/100/people/", {class: "avatar-large", alt: "user"}%>
+                 <% if  !@user_match_list.nil? && @user_match_list.any? %>
 
-      <li>
-          <%= i.date %> <%= i.start_time %>
-          <%= image_tag "http://lorempixel.com/100/100/people/", {class: "avatar-large", alt: "user"}%>
+                    <div class="invite center-inline  ">
+                        <%= link_to "Choose and Invite me", home_index_path, class: 'btn btn-primary' %>
+                    </div>
+                 <% end %>
 
-
-          <% if  !@user_match_list.nil? && @user_match_list.any? %>
-
-        <div class="invite center-inline  ">
-           <%= link_to "Choose and Invite me", home_index_path, class: 'btn btn-primary' %>
-          </div>
-         <% end %>
-
-   <div class="remove center center-inline">
-    <% if policy(i).destroy?%>
-    <%= link_to "Remove me from this list ", restaurant_match_list_path(i.restaurant,i),
-    method: :delete,
-    data: {confirm: "Are you sure?" }, class: 'btn btn-danger' %>
-    <% end %>
-    <% end %>
-  </div>
-
-  <% end %>
-
-  <%= @count %>
-</li>
-</ul>
-</div>
+                <div class="remove center center-inline">
+                    <% if policy(i).destroy?%>
+                    <%= link_to "Remove me from this list ", restaurant_match_list_path(i.restaurant,i),
+                                       method: :delete,
+                                data: {confirm: "Are you sure?" }, class: 'btn btn-danger' %>
+                    <% end %>
+                    <% end %>
+                     <% end %>
+               </div>
+          </li>
+      </ul>
+    </div>
 </div>
 
 
 <div class="back">
-<%= link_to "back", restaurants_path %>
+    <%= link_to "back", restaurants_path %>
 </div>
