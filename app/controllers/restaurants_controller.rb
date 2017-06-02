@@ -1,5 +1,7 @@
 class RestaurantsController < ApplicationController
 
+  skip_before_action :authenticate_user!, only: :index
+
   def index
        # @restaurants = Restaurant.find_by_food_type(params[:food_type])
        # @food_type = params[:food_type "mexican"]
@@ -15,7 +17,14 @@ class RestaurantsController < ApplicationController
     @user_location = params[:user_location]
 
     @user_location_requested = get_address
-    @restaurants = policy_scope(Restaurant).near(@user_location_requested, @range.to_i).where(food_type: @food_type)
+
+    if @range == nil
+      @restaurants = policy_scope(Restaurant).where(food_type: @food_type)
+      #add line below if you add slider @range to search
+      # near(@user_location_requested, @range.to_i).
+    else
+      @restaurants = policy_scope(Restaurant).near(@user_location_requested, @range.to_i).where(food_type: @food_type)
+    end
 
     @hash = Gmaps4rails.build_markers(@restaurants) do |restaurant, marker|
       marker.lat restaurant.latitude
@@ -25,8 +34,6 @@ class RestaurantsController < ApplicationController
 
         # @restaurants = Restaurant.where(food_type: @food_type)
   end
-
-
 
 
   def show

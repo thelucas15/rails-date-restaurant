@@ -5,9 +5,11 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable,
          :omniauthable, omniauth_providers: [:facebook]
 
-  has_many :match_lists
-  has_many :messages
-  has_many :conversations, foreign_key: :sender_id
+  mount_uploader :photo, PhotoUploader
+
+  has_many :match_lists, dependent: :destroy
+  has_many :messages, dependent: :destroy
+  has_many :conversations, foreign_key: :sender_id, dependent: :destroy
   validates :username, presence: true, uniqueness: true, on: :update
   validates :age, presence: true, on: :update
   validates :age_pref_start, presence: true, on: :update
@@ -15,7 +17,7 @@ class User < ApplicationRecord
   validates :description, presence: true, on: :update
   validates :hash_tag_pref, presence: true, on: :update
   validates :email, presence: true, on: :update
-  validates :password, presence: true, on: :update
+  # validates :password, presence: true, on: :update
 
   def self.find_for_facebook_oauth(auth)
     user_params = auth.slice(:provider, :uid)
