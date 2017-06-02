@@ -1,5 +1,5 @@
 class MessageBroadcastJob < ApplicationJob
-queue_as :default
+  queue_as :default
 
   def perform(message)
     sender = message.user
