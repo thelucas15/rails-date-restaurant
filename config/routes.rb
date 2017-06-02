@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'user_preferences/edit'
+
+  put 'user_preferences/update'
+
   get 'home/index'
 
   resources :conversations, only: [:create] do
@@ -13,7 +17,7 @@ Rails.application.routes.draw do
   get 'contact', to: 'pages#contact'
 
   devise_for :users,
-  controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
+  controllers: { omniauth_callbacks: 'users/omniauth_callbacks'}
 
   root to: 'pages#home'
 
