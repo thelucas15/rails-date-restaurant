@@ -1,4 +1,6 @@
 class PagesController < ApplicationController
+  # TO NOT HAVE AUTHENTICATION IN HOME PAGE
+  skip_before_action :authenticate_user!
   def home
     @image = [
       "background1.png",
