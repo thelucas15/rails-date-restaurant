@@ -3,7 +3,6 @@ class UsersController < ApplicationController
   end
 
   def edit
-    redirect
   end
 
   def show

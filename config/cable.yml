@@ -7,4 +7,3 @@ test:
 production:
   adapter: redis
   url: redis://redistogo:d4406fb7843bd26bba626e53833e145a@jack.redistogo.com:10613/
-  channel_prefix: rails-date-restaurant_production
