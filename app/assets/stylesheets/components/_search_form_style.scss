@@ -1,8 +1,13 @@
 .search-form {
-  margin-top: 20px;
-
+  margin-top: 10px;
+}
+.search-labels {
+  margin: 0;
 }
 
+.search-labels-2 {
+  margin: 10px;
+}
 .form_datetime {
   color: black !important;
 }
@@ -13,3 +18,28 @@
 .pointer:hover {
   cursor: pointer;
 }
+
+.input {
+
+    width: 80%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+
+input, label {
+    display:block;
+}
+
+
+#ex23 {
+    width: 3em;
+    height: 1.6em;
+    top: 50%;
+    margin-top: -.8em;
+    text-align: center;
+    line-height: 1.6em;
+  }
+
+
+
