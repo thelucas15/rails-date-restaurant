@@ -20,7 +20,7 @@
       <%= f.input :age, placeholder: "36", required: true %>
       <%= f.input :age_pref_start, placeholder: "25", input_html: { min: '18', max: '120' }%>
       <%= f.input :age_pref_end, placeholder: "30", input_html: { min: '18', max: '120' } %>
-      <%= f.input :gender_pref, as: :selectize, collection: ["female", "male", "both"], label: "Gender preferences", required: true %>
+      <%= f.input :gender_pref, collection: ["female", "male", "both"], label: "Gender preferences", required: true %>
       <%= f.input :hash_tag_pref, autocomplete: "off", placeholder: "#funnyperson", label: "Hash tag which describe you", required: true %>
       <%= f.input :description, autocomplete: "off", placeholder: "I'm looking for nice person to talk.", label: "Describe you in few words (max 140 characters)", required: true, :max => 140, :min => 10 %>
       <div class="form-actions">
