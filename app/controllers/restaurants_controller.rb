@@ -20,8 +20,6 @@ class RestaurantsController < ApplicationController
 
     if @range == nil
       @restaurants = policy_scope(Restaurant).where(food_type: @food_type)
-      #add line below if you add slider @range to search
-      # near(@user_location_requested, @range.to_i).
     else
       @restaurants = policy_scope(Restaurant).near(@user_location_requested, @range.to_i).where(food_type: @food_type)
     end
