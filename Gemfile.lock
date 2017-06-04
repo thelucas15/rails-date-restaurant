@@ -53,6 +53,8 @@ GEM
     bootstrap-sass (3.3.7)
       autoprefixer-rails (>= 5.2.1)
       sass (>= 3.3.4)
+    bootstrap-sass-extras (0.0.7)
+      rails (>= 3.1.0)
     bootstrap3-datetimepicker-rails (4.14.30)
       momentjs-rails (>= 2.8.1)
     builder (3.2.3)
@@ -257,6 +259,7 @@ DEPENDENCIES
   better_errors
   binding_of_caller
   bootstrap-sass
+  bootstrap-sass-extras
   bootstrap3-datetimepicker-rails (~> 4.14.30)
   byebug
   carrierwave (~> 0.11.2)

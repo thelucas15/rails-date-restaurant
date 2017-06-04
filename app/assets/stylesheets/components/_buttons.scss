@@ -13,9 +13,34 @@
   margin-top: 20px;
 }
 
+.btn-forgot {
+  color: blue;
+  text-decoration: underline;
+  background-color: transparent;
+  border: none;
+}
+
 .btn-go:hover {
   opacity: 1;
     background: #009ce9;
     text-decoration: none;
     color: white;
+}
+
+.btn-success {
+  border: none;
+  background: $gray-dark;
+  color: white;
+  border-radius: 5em;
+  padding: 5px 15px;
+  margin-bottom: 5px;
+  text-align: center;
+  font-size: 14px;
+  &:hover {
+    color: white;
+    border: none;
+    background-color: darken($gray-dark, 15%);
+    background-transparency: 0.5;
+
+  }
 }
