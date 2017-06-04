@@ -1,16 +1,22 @@
 <div class="navbar-wagon <%= yield(:special_navbar_class) %>">
   <!-- Logo -->
-
-  <%= link_to root_path, class: "navbar-wagon-brand" do %>
-    <%= image_tag "logo dinner & date.png" %>
-  <% end %>
+  <ul class="list-inline navbar-wagon-brand">
+    <li>
+      <%= link_to root_path do %>
+        <%= image_tag "logo dinner & date.png" %>
+      <% end %>
+    </li>
+    <li>
+      <h1  class="hidden-xs hidden-sm">Food Buddies</h1>
+    </li>
+  </ul>
 
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
 
     <!-- Search form -->
     <form action="" class="navbar-wagon-search">
-      <input type="text" class="navbar-wagon-search-input" placeholder="Search something">
+      <input type="text" class="navbar-wagon-search-input" placeholder="Search">
       <button type="submit" class="navbar-wagon-search-btn">
         <i class="fa fa-search"></i>
       </button>
@@ -58,7 +64,9 @@
 
     <% else %>
       <!-- Login text link -->
-      <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%# link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= modal_toggle 'Login', dialog: '#login', class: 'navbar-wagon-item navbar-wagon-link' %>
+      <%= link_to t(".sign_in", default: "Sign-up"), new_user_registration_path, class: "navbar-wagon-item navbar-wagon-link btn btn-success" %>
 
     <% end %>
 
@@ -81,4 +89,9 @@
     </div>
   </div>
 </div>
-
+<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <%= modal_dialog :id => "login",
+           :header => { :show_close => true, :title => content_tag(:h2, 'Login') },
+           :body   => content_tag(:div, (render "shared/login_form", f: f)),
+           :footer => (f.button :submit, "Log in") %>
+<% end %>
