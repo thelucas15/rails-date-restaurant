@@ -1,5 +1,4 @@
-<div class="container">
-  <div class="row">
+
     <div class="col-md-12 text-center search-form">
     <form action="/restaurants" method="get" class="form-inline" name="Go!">
 
@@ -39,15 +38,11 @@
             <% end %>
           </select>
           <br>
-          <input class="serach-labels" id="ex23" type="text" name="range" value="<%= @range %>" />
-          <!-- <input type="range" name="geolocation" id="points" value="50" min="18" max="120" data-popup-enabled="true">
- -->
           <br>
-          <input  type="submit" value="Go!" class="btn btn-go">
+          <input  type="submit" value="Find place!" class="btn btn-go">
     </form>
   </div>
-</div>
-</div>
+
 <%= content_for(:after_js) do %>
               <script type="text/javascript">
                   $(function () {
@@ -60,19 +55,17 @@
                           });
                       });
 
-                  $("#ex23").slider({
-                    ticks: [1, 3, 5],
-                    ticks_labels: ['1 km', '3km', 'City'],
-                    value: <%= @range || 3 %>,
-                    ticks_tooltip: true,
-                    step: 0.1,
-                    tooltip_position:'bottom'
-                      // ticks_positions: ["1", "3", "6"],
-                      // ticks_snap_bounds: 1,
-                    // formatter: function(value) {
-                    //   return 'Current value: ' + value;
-                    // },
-                  });
+                  $( function() {
+                    var handle = $( "#ex23" );
+                    $( "#slider" ).slider({
+                      create: function() {
+                                        handle.text( $( this ).slider( "value" ) );
+                      },
+                      slide: function( event, ui ) {
+                        handle.text( ui.value );
+                      }
+                    });
+                  } );
                   var x = document.getElementById("user-location");
 
                   function getLocation() {

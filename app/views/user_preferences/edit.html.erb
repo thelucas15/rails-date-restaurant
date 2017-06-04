@@ -1,0 +1,32 @@
+
+<div class="container">
+
+  <h2>Edit <%= @user %></h2>
+
+  <%= simple_form_for @user, url: user_preferences_update_path, method: :put do |f| %>
+    <%= f.error_notification %>
+
+
+    <div class="form-inputs">
+
+      <%= f.input :username, autocomplete: "on", placeholder: "Forest1", label:"User name", required: true %>
+      <%= f.input :first_name, autocomplete: "on", placeholder: "Tom", required: true %>
+      <%= f.input :last_name, autocomplete: "on", placeholder: "Hanks", required: true %>
+
+      <%= f.input :age, placeholder: "36", required: true %>
+      <%= f.input :age_pref_start, placeholder: "25", input_html: { min: '18', max: '120' }%>
+      <%= f.input :age_pref_end, placeholder: "30", input_html: { min: '18', max: '120' } %>
+      <%= f.input :gender_pref, collection: ["female", "male", "both"], label: "Gender preferences", required: true %>
+      <%= f.input :hash_tag_pref, autocomplete: "off", placeholder: "#funnyperson", label: "Hash tag which describe you", required: true %>
+      <%= f.input :description, autocomplete: "off", placeholder: "I'm looking for nice person to talk.", label: "Describe you in few words (max 140 characters)", required: true, :max => 140, :min => 10 %>
+      <%= f.input :photo %>
+      <%= f.input :photo_cache, as: :hidden %>
+
+      <div class="form-actions">
+        <%= f.button :submit, 'Save your preferences', class: "btn btn-success" %>
+      </div>
+
+  <% end %>
+
+  <%= link_to "Back", :back %>
+</div>
