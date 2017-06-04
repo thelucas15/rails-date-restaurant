@@ -7,6 +7,7 @@
   height: 70px;
   padding: 0px 30px;
   border: transparent;
+  color: white;
   align-items: center;
   box-shadow: none;
   justify-content: space-between;
@@ -22,9 +23,11 @@
 }
 
 /* Navbar logo */
-.navbar-wagon-brand img {
-  width: 50px;
-  bottom: 25px;
+.navbar-wagon-brand {
+  img {
+    width: 50px;
+    margin-top: -25px;
+  }
 }
 
 /* Navbar right section (with form, links, button) */
@@ -39,6 +42,8 @@
   flex: 0 1 auto;
   cursor: pointer;
   padding: 0 20px;
+  color: white !important;
+  margin: 0 !important;
 }
 
 /* Navbar standard link */

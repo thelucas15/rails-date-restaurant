@@ -21,11 +21,14 @@ gem 'devise'
 gem 'omniauth-facebook'
 gem 'momentjs-rails', '>= 2.9.0'
 gem 'bootstrap3-datetimepicker-rails', '~> 4.14.30'
-gem 'simple_form_extension'
+# gem 'simple_form_extension'
 gem 'carrierwave', '~> 0.11.2'
 gem "geocoder"
 gem "coffee-rails"
 gem "gmaps4rails"
+gem 'bootstrap-sass-extras'
+gem 'jquery-ui-sass-rails'
+
 
 source 'https://rails-assets.org' do
   gem "rails-assets-underscore"
@@ -51,4 +54,3 @@ end
 
 
 
-gem 'redactor-rails', github: 'glyph-fr/redactor-rails'

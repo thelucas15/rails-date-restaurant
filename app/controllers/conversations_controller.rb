@@ -1,5 +1,4 @@
 class ConversationsController < ApplicationController
-
   def create
     @conversation = Conversation.get(current_user.id, params[:user_id])
 
@@ -10,7 +9,7 @@ class ConversationsController < ApplicationController
     end
   end
 
-   def close
+  def close
     @conversation = Conversation.find(params[:id])
 
     session[:conversations].delete(@conversation.id)
