@@ -5,14 +5,16 @@ class ReservationsController < ApplicationController
   end
 
   def show
-    @reservation.evaluation_i
+    @reservation = Reservation.find(params[:id)
   end
-
-
 
   private
   def res_params
     params.require(:evaluation).permit(:evaluation_id,:restaurant_id)
   end
-
 end
+
+
+  #private
+  #def products_layout
+  #@current_user.special? ? "special" : "products"
