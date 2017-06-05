@@ -37,4 +37,45 @@
   top: 250px;
   margin: auto;
 }
+.map-card {
+  display: flex;
+  align-items: center;
+
+  margin: 20px;
+  padding: 10px;
+  background-color: #ffffff;
+  box-shadow: 1px 1px 5px #b3b3b3;
+}
+.list-inline > li {
+  display: inline-block;
+  padding: 0px 0px;
+}
+
+.list-inline {
+  padding-left: 0px;
+
+}
+#movies {
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 1.6em;
+}
+
+.photo_movie {
+  width: 400px
+}
+
+.social_links {
+  font-size: 12px;
+}
+
+.social_links i {
+  display: block;
+  font-size: 20px;
+}
+#map {
+  width: 400px;
+  height: 200px;
+}
+
 
