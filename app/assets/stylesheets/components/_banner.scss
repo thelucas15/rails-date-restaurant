@@ -74,8 +74,19 @@
   font-size: 20px;
 }
 #map {
-  width: 400px;
   height: 200px;
+  min-width: 100%;
+  margin: 15px;
+}
+
+#map-label-container {
+  margin: 20px 0 20px 0;
+  background-color: white;
+  border-radius: 2px;
+  box-shadow: 1px 1px 2px #B3B3B3;
+}
+#description-map {
+  padding: 10px;
 }
 
 
