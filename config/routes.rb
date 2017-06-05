@@ -5,6 +5,8 @@ Rails.application.routes.draw do
 
   get 'home/index'
 
+  get 'home/show'
+
   resources :conversations, only: [:create] do
     member do
       post :close
@@ -29,8 +31,8 @@ Rails.application.routes.draw do
     resources :evaluations, only: [:show, :new, :create, :index]
   end
 
-  resources :evaluations, only: [:show, :create, :new] do
-    resources :reservations, only: [:show, :create, :new] do
+  resources :evaluations, only: [:new] do
+    resources :reservations, only: [:show, :create] do
     end
   end
   resources :users, only: [:index, :edit, :show, :create] do
