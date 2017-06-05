@@ -36,7 +36,7 @@
           <br>
           <div class="search-labels-2">
             <label for="hash-input">Hash Your Preferences</label>
-            <input class="input-group margin-xs input" id="hash-input" type="text" name="hash_tag_pref" placeholder="#classicalmusic, #mozart">
+            <input data-role="tagsinput" class="input-group margin-xs input" id="hash-input" type="text" name="hash_tag_pref" placeholder="#classicalmusic, #mozart"/>
           </div>
           <br>
           <div class="search-labels-2">
@@ -69,6 +69,9 @@
                           format: 'LT',
                          });
                       });
+                  $(function () {
+                    $('#hash-input').val()
+                  });
                   $( function() {
                     var handle = $( "#range_lable" );
                       default_value = 7.5;
