@@ -48,6 +48,7 @@ class RestaurantsController < ApplicationController
     @restaurant = Restaurant.find(params[:id])
     authorize @restaurant
     @match_list = MatchList.new()
+    @evaluation = Evaluation.new()
     @date = params[:date]
     @start_time = params[:start_time]
     @hash_tag_pref = current_user.hash_tag_pref
