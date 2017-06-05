@@ -28,6 +28,11 @@ class RestaurantsController < ApplicationController
       marker.lat restaurant.latitude
       marker.lng restaurant.longitude
       marker.infowindow render_to_string(partial: "/shared/restaurant_map_box", locals: { restaurant: restaurant })
+      # marker.picture({
+      #       url: render_to_string(partial: "/shared/restaurant_map_box", locals: { restaurant: restaurant }),
+      #       width: 32,
+      #       height: 32,
+      #   })
     end
 
         # @restaurants = Restaurant.where(food_type: @food_type)
