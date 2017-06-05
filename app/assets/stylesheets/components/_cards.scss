@@ -76,3 +76,20 @@
 .card {
   margin-bottom: 30px;
 }
+
+.card-evaluation {
+  border-top: 1px solid $gray-lighter;
+  padding-top: 15px;
+}
+
+.accept {
+  font-size: 50px;
+  font-weight: 100;
+  color: $green;
+}
+
+.reject {
+  font-size: 50px;
+  color: $red;
+  font-weight: 100;
+}

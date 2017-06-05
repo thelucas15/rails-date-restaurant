@@ -17,6 +17,11 @@ class EvaluationsController < ApplicationController
     redirect_to match_list_evaluation_path(params[:match_list_id], @evaluation)
   end
 
+  def index
+    @evaluations = Evaluation.all
+    @evaluations = policy_scope(@evaluations)
+  end
+
 
 
 end
