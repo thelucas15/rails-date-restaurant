@@ -5,8 +5,11 @@ body {
   margin: 0;
   background: #F4F4F4;
 }
-h1, h2, h3 {
+h1, h2 {
   font-family: $title-font;
+}
+h3 {
+  font-family: $base-font;
 }
 a {
   text-decoration: none;

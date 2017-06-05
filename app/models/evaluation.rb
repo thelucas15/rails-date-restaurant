@@ -1,6 +1,7 @@
 class Evaluation < ApplicationRecord
-  has_many :match_lists
+  belongs_to :match_list
   has_many :users
-  has_one :restaurant
-  validates :decision, presence: true
+  belongs_to :restaurant
+  belongs_to :selector, foreign_key: :selector_id, class_name: "User"
+  belongs_to :selectee, foreign_key: :selectee_id, class_name: "User"
 end
