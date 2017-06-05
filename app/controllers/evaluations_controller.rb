@@ -1,23 +1,48 @@
 class EvaluationsController < ApplicationController
+    skip_after_action :verify_policy_scoped, only: [:create, :new]
 
   def new
 
     @evaluation = Evaluation.new()
   end
 
-  def show
-    #evaluations has 2 match_list ids -references  and 1 restaurant as ref
-    # need to show both users that are selectors and selectees
-    @evaluation.user = current_user
-    @evaluation.restaurant_id = params[:restaurant_id].to_i
-    @evaluation.match_list_id = params[:match_list_id].to_i
-    # need match_id to associate evaluation with corresponding restaurant
-    @evaluation
+  def create
 
-    redirect_to match_list_evaluation_path(params[:match_list_id], @evaluation)
+    @match_list = MatchList.find(params[:match_list_id])
+    @restaurant = @match_list.restaurant
+    @evaluation = Evaluation.new(selector: current_user, selectee_id: params[:selectee_id], match_list: @match_list, restaurant: @restaurant)
+    authorize @evaluation
+    @evaluation.save
+
+    # @evaluation = Evaluation.find(params[:id])
+    # @evaluation.update_attributes()
+    # @selector = @evaluation.selector
+    # @selectee = @evaluation.selectee
+    # @selector = false
+    # @selectee = false
+    # @evaluation.update_attributes(evaluations_path: true)
+    # @evaluation = Evaluation.new(eval_params)
+    # @evaluation.user = current_user
+
+    #   if @selector == true && @selectee == true
+    #     @evaluation.save
+    #     @reservation = Reservation.new()
+    #     redirect_to evaluation_reservation_path
+    #   else
+    #    redirect_to restaurant_path(:params[:restaurant_id])
+    #   end
+    redirect_to home_index_path
   end
 
 
+
+
+
+  private
+
+  def eval_params
+    params.require(:evaluation).permit(:selector,:selectee)
+  end
 
 end
 

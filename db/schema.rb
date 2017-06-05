@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170601144105) do
+ActiveRecord::Schema.define(version: 20170605150806) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,14 +26,16 @@ ActiveRecord::Schema.define(version: 20170601144105) do
   create_table "evaluations", force: :cascade do |t|
     t.bigint "match_list_id"
     t.bigint "restaurant_id"
-    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.boolean "selector"
-    t.boolean "selectee"
+    t.integer "selector_id"
+    t.integer "selectee_id"
+    t.boolean "accepted"
+    t.index ["accepted"], name: "index_evaluations_on_accepted"
     t.index ["match_list_id"], name: "index_evaluations_on_match_list_id"
     t.index ["restaurant_id"], name: "index_evaluations_on_restaurant_id"
-    t.index ["user_id"], name: "index_evaluations_on_user_id"
+    t.index ["selectee_id"], name: "index_evaluations_on_selectee_id"
+    t.index ["selector_id"], name: "index_evaluations_on_selector_id"
   end
 
   create_table "match_lists", force: :cascade do |t|
@@ -119,7 +121,6 @@ ActiveRecord::Schema.define(version: 20170601144105) do
 
   add_foreign_key "evaluations", "match_lists"
   add_foreign_key "evaluations", "restaurants"
-  add_foreign_key "evaluations", "users"
   add_foreign_key "match_lists", "restaurants"
   add_foreign_key "match_lists", "users"
   add_foreign_key "messages", "conversations"
