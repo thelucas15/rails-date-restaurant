@@ -42,7 +42,7 @@
           <% elsif !current_user.photo.nil? %>
             <%= cl_image_tag current_user.photo.url(:bright_face), class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
           <% else %>
-            <%= avatar_url = "http://placehold.it/30x30" %>
+            <%= image_tag "http://placehold.it/30x30" %>
           <% end %>
           <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
             <li>
