@@ -6,6 +6,17 @@ class EvaluationsController < ApplicationController
     @evaluation = Evaluation.new()
   end
 
+  def index
+    @evaluation = policy_scope(Evaluation).where(selectee_id: current_user.id)
+  end
+
+  def accept
+
+  end
+
+  def decline
+  end
+
   def create
 
     @match_list = MatchList.find(params[:match_list_id])
