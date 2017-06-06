@@ -29,7 +29,7 @@
       <%= link_to evaluations_path, class: "navbar-wagon-item navbar-wagon-link" do %>
         <div class="badge-container">
           <i class="fa fa-envelope-o"></i>
-          <div class="badge badge-blue"><%= Evaluation.where(selectee_id: current_user.id).length %></div>
+          <div class="badge badge-blue"><%= Evaluation.where(selectee_id: current_user.id).where(accepted: nil).length %></div>
         </div>
       <% end %>
 
