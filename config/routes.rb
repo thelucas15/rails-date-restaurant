@@ -28,12 +28,17 @@ Rails.application.routes.draw do
   end
 
   resources :match_lists do
-    resources :evaluations, only: [:show, :new, :create]
+    resources :evaluations, only: [:create, :index]
   end
+
   resources :evaluations, only: [:index]
 
-  resources :evaluations, only: [:new] do
-    resources :reservations, only: [:show, :create] do
+  resources :evaluations, only: [:create] do
+    member do
+      post :accept
+      post :decline
+    end
+    resources :reservations, only: [:show, :create, :new] do
     end
   end
   resources :users, only: [:index, :edit, :show, :create] do

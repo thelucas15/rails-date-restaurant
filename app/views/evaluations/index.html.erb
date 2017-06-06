@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 
 <div class="container">
@@ -33,4 +34,20 @@
 </div>
  <% end %>
 
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <div class="selectee-invitations">
+        <% @evaluations.each do |evaluation| %>
+
+
+        <%= link_to "accept", accept_evaluation_path(evaluation), method: :post, class: 'btn btn-primary' %>
+        <%= link_to "decline", decline_evaluation_path(evaluation), method: :post, class: 'btn btn-danger' %>
+
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
 
