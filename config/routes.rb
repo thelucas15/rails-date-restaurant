@@ -35,7 +35,7 @@ Rails.application.routes.draw do
     resources :reservations, only: [:show, :create] do
     end
   end
-  resources :users, only: [:index, :edit, :show, :create] do
+  resources :users, only: [:index, :edit, :create] do
     post :impersonate, on: :member
     post :stop_impersonating, on: :collection
   end

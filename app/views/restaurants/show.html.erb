@@ -49,5 +49,5 @@
 
 
 <div class="back">
-    <%= link_to "back", restaurants_path %>
+    <%= link_to "back", restaurants_path(date: @date, start_time: @start_time,  food_type: @restaurant.food_type), class: 'card-link' %>
 </div>

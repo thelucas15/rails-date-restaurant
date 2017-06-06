@@ -21,7 +21,8 @@ def resource_name
     if user.facebook_picture_url
       user.facebook_picture_url
     elsif user.photo.url
-      user.photo.url
+      # user.photo.url
+      current_user.photo.url(:bright_face)
     else
       "http://placehold.it/30x30"
     end

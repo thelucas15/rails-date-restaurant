@@ -61,7 +61,7 @@
 
 <%= content_for(:after_js) do %>
               <script type="text/javascript">
-                  $(function () {
+                  $(document).ready(function () {
                         $('#datepicker').datetimepicker({
                           format: 'DD/MM/YYYY',
                           });
@@ -74,7 +74,7 @@
                   });
                   $( function() {
                     var handle = $( "#range_lable" );
-                      default_value = 7.5;
+                      default_value = <%= @range %>;
                       current_val_element = $("#range_lable");
                       current_val_element.text(default_value);
 
@@ -87,6 +87,7 @@
                         slide: function( event, ui ) {
                           value = ui.value;
                           current_val_element.text(value);
+                          $('#range-value').val(value)
                         }
                       });
                       });

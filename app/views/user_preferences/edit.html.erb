@@ -13,9 +13,24 @@
       <%= f.input :first_name, autocomplete: "on", placeholder: "Tom", required: true %>
       <%= f.input :last_name, autocomplete: "on", placeholder: "Hanks", required: true %>
 
-      <%= f.input :age, placeholder: "36", required: true %>
-      <%= f.input :age_pref_start, placeholder: "25", input_html: { min: '18', max: '120' }%>
-      <%= f.input :age_pref_end, placeholder: "30", input_html: { min: '18', max: '120' } %>
+      <%# f.input :age, placeholder: "36", required: true %>
+
+      <label>Your Age</label>
+      <div id="age_slider"></div>
+      <label id="age_lable"></label>
+      <%= f.hidden_field :age %>
+
+
+      <label>Age preferences</label>
+      <div id="pref_slider"></div>
+
+      <label id="start_age_lable" class="pref-label"></label>
+      <label id="end_age_lable" class="pref-label"></label>
+      <%= f.hidden_field :age_pref_start %>
+      <%= f.hidden_field :age_pref_end %>
+
+      <br>
+      <br>
       <%= f.input :gender_pref, collection: ["female", "male", "both"], label: "Gender preferences", required: true %>
       <%= f.input :hash_tag_pref, autocomplete: "off", placeholder: "#funnyperson", label: "Hash tag which describe you", required: true %>
       <%= f.input :description, autocomplete: "off", placeholder: "I'm looking for nice person to talk.", label: "Describe you in few words (max 140 characters)", required: true, :max => 140, :min => 10 %>
@@ -30,3 +45,53 @@
 
   <%= link_to "Back", :back %>
 </div>
+<%= content_for(:after_js) do %>
+<script type="text/javascript">
+  $(document).ready(function() {
+    var handle2 = $( "#start_age_lable" );
+                      default_value1 = <%= @user.age_pref_start %>;
+                      default_value2 = <%= @user.age_pref_end %>;
+                      current_val_element1 = $("#start_age_lable");
+                      current_val_element1.text(default_value1);
+                      current_val_element2 = $("#end_age_lable");
+                      current_val_element2.text(default_value2);
+
+      var slider = $("#pref_slider").slider({
+          range: true,
+          min: 18,
+          max: 120,
+          values: [default_value1, default_value2],
+          slide: function(event, ui) {
+              // debugger;
+              value1 = ui.values[0];
+              current_val_element1.text(value1);
+              $('#user_age_pref_start').val(value1);
+              value2 = ui.values[1];
+              current_val_element2.text(value2);
+              $('#user_age_pref_end').val(value2);
+          }
+      });
+  //     $("#age_pref_start").val(slider.slider("values")[0]);
+  //     $("#age_pref_end").val(slider.slider("values")[1]);
+   });
+                $( function() {
+                    var handle = $( "#age_lable" );
+                      default_value = <%= @user.age %>;
+                      current_val_element = $("#age_lable");
+                      current_val_element.text(default_value);
+
+                      $( "#age_slider" ).slider({
+                        value: default_value,
+                        min: 18,
+                        max: 120,
+                        step: 1,
+
+                        slide: function( event, ui ) {
+                          value = ui.value;
+                          current_val_element.text(value);
+                          $('#user_age').val(value)
+                        }
+                      });
+                      });
+  </script>
+<% end %>
