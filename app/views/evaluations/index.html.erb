@@ -1,32 +1,36 @@
+
+
+<div class="container">
+  <div class="row">
+    <% @evaluations.each do |evaluation| %>
+
 <div class="col-xs-12 col-sm-4">
   <div class="card">
     <div class="card-body">
       <div class="card-picture" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.1)), url('<%= Restaurant.all.first.photo %>')">
       <div class="counter">
-         RESTAURANT NAME
-         RESTAURANT ADDRESS
+
+
+          <h2><%= evaluation.restaurant.name %></h2>
+
         </div>
       </div>
-      <div class="card-likes">
-        <div class="col-xs-3">
-          <img src="http://placehold.it/30x30" alt="" class="avatar-large">
-        </div>
-        <div class="col-xs-9">
-         <h6>NAME OF THE BUDDIE</h6>
-          <p>#hashtag</p>
-        </div>
-      </div>
+        <ul class="list-inline card-likes">
+          <li>
+            <img src="http://placehold.it/30x30" alt="" class="avatar-large">
+          </li>
+          <li>
+            <h6><%= evaluation.selector.first_name + " " + evaluation.selector.last_name%></h6>
+            <p><%= evaluation.selector.hash_tag_pref %></p>
+          </li>
+        </ul>
       <div class="card-evaluation row text-center">
-        <div class="col-xs-6">
-          <i class="fa fa-check-circle-o accept"></i>
-        </div>
-        <div class="col-xs-6">
-          <i class="fa fa-times-circle-o reject"></i>
-        </div>
+
       </div>
     </div>
     <!--   <a class="card-link" href="#" ></a> -->
   </div>
 </div>
+ <% end %>
 
 

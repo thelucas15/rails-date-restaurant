@@ -7,7 +7,7 @@ class EvaluationsController < ApplicationController
   end
 
   def index
-    @evaluation = policy_scope(Evaluation).where(selectee_id: current_user.id)
+    @evaluations = policy_scope(Evaluation).where(selectee_id: current_user.id)
   end
 
   def accept

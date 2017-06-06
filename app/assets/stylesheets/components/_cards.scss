@@ -27,12 +27,12 @@
   color: #B3B3B3;
   font-size: 14px;
   font-weight: bold;
-  padding-top: 10px;
+  padding: 5px 0;
+  line-height: 0.5;
   display: flex;
-  justify-content: flex-end;
 }
 .card-likes li {
-  padding: 0 5px;
+  margin: auto 5px;
 }
 .card-likes i {
   padding-right: 5px;
@@ -79,17 +79,17 @@
 
 .card-evaluation {
   border-top: 1px solid $gray-lighter;
-  padding-top: 15px;
 }
 
 .accept {
-  font-size: 50px;
-  font-weight: 100;
-  color: $green;
+  background-color: $green;
+  height: 100px;
+  width: 50%;
 }
 
 .reject {
   font-size: 50px;
-  color: $red;
+  background-color: $red;
   font-weight: 100;
+  height: 100%;
 }
