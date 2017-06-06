@@ -27,7 +27,8 @@ gem "geocoder"
 gem "coffee-rails"
 gem "gmaps4rails"
 gem 'bootstrap-sass-extras'
-gem 'jquery-ui-sass-rails'
+# gem 'jquery-ui-sass-rails'
+gem "letter_opener", group: :development
 
 
 source 'https://rails-assets.org' do

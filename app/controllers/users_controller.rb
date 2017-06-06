@@ -5,8 +5,6 @@ class UsersController < ApplicationController
   def edit
   end
 
-  def show
-  end
 
   def index
     @users = policy_scope(User).where(restaurant_id: @restaurant.id )

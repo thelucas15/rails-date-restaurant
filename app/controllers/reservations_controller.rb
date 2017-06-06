@@ -1,10 +1,14 @@
 class ReservationsController < ApplicationController
 
   def create
+    @evaluation = Evaluation.find(params[:evaluation_id])
     @reservation = Reservation.new(res_params)
+    @restaurant.match_list = @evaluation.match_list
+    @restaurant.evaluation = @evaluation
+    ReservationMailer.confirmation(@reservation.evaluation.selector, @reservation).deliver_now
+    ReservationMailer.confirmation(@reservation.evaluation.selectee, @reservation).deliver_now
+    @reservation.save
     authorize @reservation
-
-
   end
 
   def show
@@ -27,6 +31,4 @@ class ReservationsController < ApplicationController
 end
 
 
-  #private
-  #def products_layout
-  #@current_user.special? ? "special" : "products"
+
