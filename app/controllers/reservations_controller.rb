@@ -5,7 +5,15 @@ class ReservationsController < ApplicationController
   end
 
   def show
-    @reservation = Reservation.find(params[:id)
+    @reservation = Reservation.find(params[:id])
+    authorize @reservation
+  end
+
+  def new
+    @evaluation = Evaluation.find(params[:evaluation_id])
+    @restaurant = @evaluation.restaurant
+    @reservation = Reservation.new
+    authorize @reservation
   end
 
   private

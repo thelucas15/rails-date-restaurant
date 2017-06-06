@@ -32,7 +32,7 @@ Rails.application.routes.draw do
   end
 
   resources :evaluations, only: [:new] do
-    resources :reservations, only: [:show, :create] do
+    resources :reservations, only: [:show, :create, :new] do
     end
   end
   resources :users, only: [:index, :edit, :show, :create] do
