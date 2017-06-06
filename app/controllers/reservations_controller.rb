@@ -2,6 +2,9 @@ class ReservationsController < ApplicationController
 
   def create
     @reservation = Reservation.new(res_params)
+    authorize @reservation
+
+
   end
 
   def show
@@ -14,6 +17,7 @@ class ReservationsController < ApplicationController
     @restaurant = @evaluation.restaurant
     @reservation = Reservation.new
     authorize @reservation
+
   end
 
   private
