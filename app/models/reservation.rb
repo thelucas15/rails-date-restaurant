@@ -1,12 +1,8 @@
 class Reservation < ApplicationRecord
-  has_one :evaluation
+
+  has_one :evaluation # not sure ask nick
   belongs_to :restaurant
+  belongs_to :user
+  belongs_to :match_list
 
-  # after_create :send_confirmation_email
-
-  # private
-
-  # def send_confirmation_email
-  #   ReservationMailer.confirmation(self).deliver_now
-  # end
 end

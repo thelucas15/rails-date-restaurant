@@ -1,9 +1,27 @@
 class EvaluationsController < ApplicationController
-    skip_after_action :verify_policy_scoped, only: [:create, :new]
 
-  def new
+  def index
+   @evaluations = policy_scope(Evaluation).where(selectee_id: current_user.id)
+  end
 
-    @evaluation = Evaluation.new()
+  def accept
+
+    @evaluation = Evaluation.find(params[:id])
+    authorize @evaluation
+    @evaluation.accepted = true
+    if @evaluation.save
+      redirect_to  new_evaluation_reservation_path(@evaluation)
+
+    end
+  end
+
+  def decline
+    @evaluation = Evaluation.find(params[:id])
+    authorize @evaluation
+    @evaluation.accepted = false
+    if @evaluation.save
+      redirect_to match_list_evaluations_path(@evaluation.match_list_id)
+    end
   end
 
   def create
@@ -14,24 +32,7 @@ class EvaluationsController < ApplicationController
     authorize @evaluation
     @evaluation.save
 
-    # @evaluation = Evaluation.find(params[:id])
-    # @evaluation.update_attributes()
-    # @selector = @evaluation.selector
-    # @selectee = @evaluation.selectee
-    # @selector = false
-    # @selectee = false
-    # @evaluation.update_attributes(evaluations_path: true)
-    # @evaluation = Evaluation.new(eval_params)
-    # @evaluation.user = current_user
-
-    #   if @selector == true && @selectee == true
-    #     @evaluation.save
-    #     @reservation = Reservation.new()
-    #     redirect_to evaluation_reservation_path
-    #   else
-    #    redirect_to restaurant_path(:params[:restaurant_id])
-    #   end
-    redirect_to home_index_path
+    redirect_to match_list_evaluations_path(@match_list)
   end
 
 
@@ -41,8 +42,9 @@ class EvaluationsController < ApplicationController
   private
 
   def eval_params
-    params.require(:evaluation).permit(:selector,:selectee)
+    params.require(:evaluation).permit(:selector_id,:selectee_id)
   end
+
 
 end
 

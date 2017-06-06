@@ -44,3 +44,25 @@
 
   }
 }
+
+.btn {
+  min-width: 100px;
+  line-height: 1.4;
+}
+
+.btn-facebook {
+  border: none;
+  background-color: #3b5998;
+  color: white;
+  border-radius: 5em;
+  padding: 5px 15px;
+  margin-bottom: 5px;
+  text-align: center;
+  font-size: 14px;
+  &:hover {
+    color: white;
+    border: none;
+    background-color: darken(#3b5998, 15%);
+    background-transparency: 0.5;
+  }
+}
