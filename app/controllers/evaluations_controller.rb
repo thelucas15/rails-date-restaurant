@@ -10,9 +10,9 @@ class EvaluationsController < ApplicationController
     authorize @evaluation
     @evaluation.accepted = true
     if @evaluation.save
-      redirect_to  new_evaluation_reservation_path(@evaluation)
-
+       redirect_to new_evaluation_reservation_path(@evaluation)
     end
+
   end
 
   def decline
@@ -43,6 +43,12 @@ class EvaluationsController < ApplicationController
 
   def eval_params
     params.require(:evaluation).permit(:selector_id,:selectee_id)
+  end
+
+  def destroy
+    @evaluation = Evaluation.find(params[:Id])
+    authorize @evaluation
+    @evaluation.destroy
   end
 
 
