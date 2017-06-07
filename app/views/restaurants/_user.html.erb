@@ -1,0 +1,38 @@
+<li>
+  <div class="user-card">
+    <div class="avatar-card">
+      <div class="user-avatar padded-right">
+        <%= image_tag "http://lorempixel.com/100/100/people/", {class: "avatar-large", alt: "user"}%>
+      </div>
+
+      <div class="user-and-date">
+        <p class="user-name text-left">
+          mike898987
+        </p>
+        <p class="date-info text-left">
+          <%= match_list.date.strftime("%d %b, %Y") %> <%= match_list.start_time.strftime("%H:%M") %>
+        </p>
+      </div>
+    </div>
+
+
+    <% if  !user_match_list.nil? && user_match_list.any? %>
+
+      <div class="invite-button">
+
+          <div class="invite center-inline  ">
+            <%= form_tag match_list_evaluations_path(match_list) do %>
+              <%= hidden_field_tag 'selectee_id', match_list.user.id %>
+              <%= submit_tag 'Invite', class: 'btn btn-primary' %>
+            <% end %>
+          </div>
+
+      </div>
+    <% end %>
+
+  </div>
+</li>
+
+<hr>
+
+
