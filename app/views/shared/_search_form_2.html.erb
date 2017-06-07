@@ -26,7 +26,7 @@
           <input  type="hidden" name='user_location_address' id='user-location-address' value="<%= @user_location_address %>"/>
 
 
-          <select name="food_type" class="form-control search-labels">
+          <select name="food_type" class="input-group form-control search-labels">
             <option type="text" value="">Food Type</option>
             <% Restaurant::FOOD_TYPES.each do |foodtype| %>
               <option type="text" value="<%=foodtype%>" <% if @food_type == foodtype %>selected="selected"<% end %>><%=foodtype.capitalize%></option>
@@ -55,7 +55,7 @@
  -->
           </div>
           <br>
-          <input  type="submit" value="Find your Buddy!" class="btn btn-go">
+          <input id="button-find-your-buddy" type="submit" value="Find your Buddy!" class="btn btn-go">
     </form>
   </div>
 
