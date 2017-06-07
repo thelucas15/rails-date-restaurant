@@ -1,16 +1,20 @@
 <div class="navbar-wagon <%= yield(:special_navbar_class) %>">
   <!-- Logo -->
-
-  <%= link_to root_path, class: "navbar-wagon-brand" do %>
-    <%= image_tag "logo dinner & date.png" %>
-  <% end %>
+  <ul class="list-inline navbar-wagon-brand">
+    <li>
+      <%= link_to root_path do %>
+        <%= image_tag "logo.png" %>
+      <% end %>
+    </li>
+    <li>
+      <h1  class="hidden-xs hidden-sm">Food Buddies</h1>
+    </li>
+  </ul>
 
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
 
     <!-- Search form -->
-    <!-- <form action="" class="navbar-wagon-search">
-      <input type="text" class="navbar-wagon-search-input" placeholder="Search something">
       <button type="submit" class="navbar-wagon-search-btn">
         <i class="fa fa-search"></i>
       </button>
@@ -20,22 +24,17 @@
     <% if user_signed_in? %>
 
       <!-- Notification -->
-      <%= link_to "#", class: "navbar-wagon-item navbar-wagon-link" do %>
+      <%= link_to evaluations_path, class: "navbar-wagon-item navbar-wagon-link" do %>
         <div class="badge-container">
           <i class="fa fa-envelope-o"></i>
-          <div class="badge badge-blue">3</div>
+          <div class="badge badge-blue"><%= Evaluation.where(selectee_id: current_user.id).where(accepted: nil).length %></div>
         </div>
       <% end %>
 
       <!-- Profile picture and dropdown -->
       <div class="navbar-wagon-item">
         <div class="dropdown">
-          <% avatar_url = current_user.facebook_picture_url || "http://placehold.it/30x30" %>
-          <% if false %>
-            <%= image_tag avatar_url, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
-          <% else %>
-          <%= cl_image_tag current_user.photo.url(:bright_face), class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
-          <% end %>
+          <%= image_tag avatar_url(current_user), class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
           <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
             <li>
               <%= link_to user_preferences_edit_path do %>
@@ -58,7 +57,10 @@
 
     <% else %>
       <!-- Login text link -->
-      <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%# link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= modal_toggle 'Login', dialog: '#login', class: 'navbar-wagon-item navbar-wagon-link' %>
+      <%= modal_toggle 'Sign-up', dialog: '#signup', class: 'navbar-wagon-item navbar-wagon-link btn btn-success' %>
+
 
     <% end %>
 
@@ -82,3 +84,16 @@
   </div>
 </div>
 
+<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <%= modal_dialog :id => "login",
+           :header => { :show_close => true, :title => content_tag(:h2, 'Login') },
+           :body   => content_tag(:div, (render "shared/login_form", f: f)),
+           :footer => (f.button :submit, "Log in") %>
+<% end %>
+
+<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <%= modal_dialog :id => "signup",
+           :header => { :show_close => true, :title => content_tag(:h2, 'Sign-up') },
+           :body   => content_tag(:div, (render "shared/signup_form", f: f)),
+           :footer => (f.button :submit, "Sign-up") %>
+<% end %>

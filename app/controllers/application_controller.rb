@@ -28,4 +28,11 @@ class ApplicationController < ActionController::Base
     devise_controller? || params[:controller] =~ /(^(rails_)?admin)|(^pages$)/ ||  params[:controller] == "conversations" || params[:controller] == "messages"
   end
 
+  protected
+
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.permit(:sign_up) do |user_params|
+      user_params.permit(:email, :password, :password_confirmation, :first_name, :last_name, :birthday, :phone_number, :username, :avatar, :address, :is_property)
+    end # TO RECEIVE MORE PARAM FROM LOGIN, LIKE USER NAME
+  end
 end

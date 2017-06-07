@@ -26,7 +26,10 @@
                  <% if  !@user_match_list.nil? && @user_match_list.any? %>
 
                     <div class="invite center-inline  ">
-                        <%= link_to "Choose and Invite me", home_index_path, class: 'btn btn-primary' %>
+                      <%= form_tag match_list_evaluations_path(i) do %>
+                          <%= hidden_field_tag 'selectee_id', i.user.id %>
+                          <%= submit_tag 'Choose and Invite me', class: 'btn btn-primary' %>
+                      <% end %>
                     </div>
                  <% end %>
 
@@ -37,14 +40,18 @@
                                 data: {confirm: "Are you sure?" }, class: 'btn btn-danger' %>
                     <% end %>
                     <% end %>
-                     <% end %>
+                    <% end %>
                </div>
           </li>
       </ul>
     </div>
+
 </div>
 
 
-<div class="back">
+
+<!-- (date: @date, start_time: @start_time,  food_type: @restaurant.food_type), class: 'card-link'
+ --><div class="back">
+
     <%= link_to "back", restaurants_path %>
 </div>

@@ -10,6 +10,10 @@ class User < ApplicationRecord
   has_many :match_lists, dependent: :destroy
   has_many :messages, dependent: :destroy
   has_many :conversations, foreign_key: :sender_id, dependent: :destroy
+  has_many :selector_evaluations, foreign_key: :selector_id, class_name: "Evaluation"
+  has_many :selectee_evaluations, foreign_key: :selectee_id, class_name: "Evaluation"
+  has_many :evaluations
+
   validates :username, presence: true, uniqueness: true, on: :update
   validates :age, presence: true, on: :update
   validates :age_pref_start, presence: true, on: :update

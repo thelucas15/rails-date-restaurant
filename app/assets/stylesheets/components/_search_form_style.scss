@@ -1,44 +1,49 @@
 .search-form {
-  margin-top: 10px;
+  margin-top: 0px;
 }
 .search-labels {
-  margin: 0;
+  margin-top: 0px;
 }
 
 .search-labels-2 {
-  margin: 10px;
+  margin-top: 0px;
 }
 .form_datetime {
   color: black !important;
 }
 
 .slider {
-  margin-top: 20px;
+  margin-top: 10px;
 }
 .pointer:hover {
   cursor: pointer;
 }
 
 .input {
+
     width: 80%;
     padding: 12px 20px;
-    margin: 8px 0;
+    margin: 0px 0;
     box-sizing: border-box;
 }
 
 input, label {
     display:block;
+    font-size: 16px;
+    padding: 5px;
 }
 
 
-#ex23 {
-    width: 3em;
+#range-value{
+    width: 50%;
     height: 1.6em;
     top: 50%;
     margin-top: -.8em;
     text-align: center;
     line-height: 1.6em;
   }
+
+
 
 
 

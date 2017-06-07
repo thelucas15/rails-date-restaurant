@@ -23,6 +23,7 @@
               </div>
           </div>
 
+          <!-- This line is passing params with geolocations -->
           <input  type="hidden" name='user_location_address' id='user-location-address' value="<%= @user_location_address %>"/>
 
           <!-- <select name="start_time" class="form-control" id="time-picker" onmousedown="if(this.options.length>5){this.size=5;}" onchange="this.blur()"  onblur="this.size=0;" >
@@ -133,9 +134,18 @@
                       }
                   }
                   // getLocation();
-
+                  $( function() {
+                  $( "#number" )
+                    .selectmenu()
+                    .selectmenu( "menuWidget" )
+                    .addClass( "overflow" );
+                    });
                       </script>
-              <% end %>
 
+
+              <% end %>
+<%= content_for(:js_file) do %>
+<%= javascript_include_tag 'google_maps_autocomplete' %>
+<% end %>
 
 <!-- <input class='hidden' name='datehide' id='datehide' value='before'/> -->

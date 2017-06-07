@@ -1,22 +1,53 @@
 class EvaluationsController < ApplicationController
 
-  def new
-
-    @evaluation = Evaluation.new()
+  def index
+   @evaluations = policy_scope(Evaluation).where(selectee_id: current_user.id).where(accepted: nil)
   end
 
-  def show
-    #evaluations has 2 match_list ids -references  and 1 restaurant as ref
-    # need to show both users that are selectors and selectees
-    @evaluation.user = current_user
-    @evaluation.restaurant_id = params[:restaurant_id].to_i
-    @evaluation.match_list_id = params[:match_list_id].to_i
-    # need match_id to associate evaluation with corresponding restaurant
-    @evaluation
+  def accept
 
-    redirect_to match_list_evaluation_path(params[:match_list_id], @evaluation)
+    @evaluation = Evaluation.find(params[:id])
+    authorize @evaluation
+    @evaluation.accepted = true
+    if @evaluation.save
+       redirect_to new_evaluation_reservation_path(@evaluation)
+    end
+
   end
 
+  def decline
+    @evaluation = Evaluation.find(params[:id])
+    authorize @evaluation
+    @evaluation.accepted = false
+    if @evaluation.save
+      redirect_to match_list_evaluations_path(@evaluation.match_list_id)
+    end
+  end
+
+  def create
+
+    @match_list = MatchList.find(params[:match_list_id])
+    @restaurant = @match_list.restaurant
+    @evaluation = Evaluation.new(selector: current_user, selectee_id: params[:selectee_id], match_list: @match_list, restaurant: @restaurant)
+    authorize @evaluation
+    @evaluation.save
+
+    redirect_to match_list_evaluations_path(@match_list)
+  end
+
+
+
+  private
+
+  def eval_params
+    params.require(:evaluation).permit(:selector_id,:selectee_id)
+  end
+
+  def destroy
+    @evaluation = Evaluation.find(params[:Id])
+    authorize @evaluation
+    @evaluation.destroy
+  end
 
 
 end

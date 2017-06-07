@@ -4,18 +4,21 @@ body {
   padding-bottom: 200px;
   margin: 0;
   background: #F4F4F4;
+  background: image-url('pattern.png');
+
 }
-h1, h2, h3 {
+h1, h2 {
   font-family: $title-font;
+  color: $green;
+}
+h3 {
+  font-family: $base-font;
 }
 a {
   text-decoration: none;
 }
 a:hover {
   text-decoration: none;
-}
-.container {
-  margin: 0 auto;
 }
 .text-center {
   text-align: center;
@@ -37,3 +40,4 @@ a:hover {
 .card {
   flex: 0 0 32%;
 }
+

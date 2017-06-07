@@ -5,6 +5,8 @@ Rails.application.routes.draw do
 
   get 'home/index'
 
+  get 'home/show'
+
   resources :conversations, only: [:create] do
     member do
       post :close
@@ -26,16 +28,21 @@ Rails.application.routes.draw do
   end
 
   resources :match_lists do
-    resources :evaluations, only: [:show, :new, :create, :index]
+    resources :evaluations, only: [:create, :index]
   end
 
-  resources :evaluations, only: [:show, :create, :new] do
+  resources :evaluations, only: [:index]
+
+  resources :evaluations, only: [:create] do
+    member do
+      post :accept
+      post :decline
+    end
     resources :reservations, only: [:show, :create, :new] do
     end
   end
-  resources :users, only: [:index, :edit, :show, :create] do
-    post :impersonate, on: :member
-    post :stop_impersonating, on: :collection
-  end
+  resources :users, only: [:index, :edit, :create] do
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  end
 end
