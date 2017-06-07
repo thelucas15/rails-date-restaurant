@@ -23,33 +23,7 @@
               </div>
           </div>
 
-          <!-- <form action="#">
-            <fieldset>
-              <label for="number">Select a number</label>
-                <select name="start_time" id="number">
-                  <option>1</option>
-                  <option selected="selected">2</option>
-                  <option>3</option>
-                  <option>4</option>
-                  <option>5</option>
-                  <option>6</option>
-                  <option>7</option>
-                  <option>8</option>
-                  <option>9</option>
-                  <option>10</option>
-                  <option>11</option>
-                  <option>12</option>
-                  <option>13</option>
-                  <option>14</option>
-                  <option>15</option>
-                  <option>16</option>
-                  <option>17</option>
-                  <option>18</option>
-                  <option>19</option>
-                </select>
-              </fieldset>
-          </form> -->
-
+          <!-- This line is passing params with geolocations -->
           <input  type="hidden" name='user_location_address' id='user-location-address' value="<%= @user_location_address %>"/>
 
           <!-- <select name="start_time" class="form-control" id="time-picker" onmousedown="if(this.options.length>5){this.size=5;}" onchange="this.blur()"  onblur="this.size=0;" >
@@ -167,7 +141,11 @@
                     .addClass( "overflow" );
                     });
                       </script>
-              <% end %>
 
+
+              <% end %>
+<%= content_for(:js_file) do %>
+<%= javascript_include_tag 'google_maps_autocomplete' %>
+<% end %>
 
 <!-- <input class='hidden' name='datehide' id='datehide' value='before'/> -->
