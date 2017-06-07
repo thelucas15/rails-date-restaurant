@@ -4,12 +4,13 @@
 
 
 <%= simple_form_for([@evaluation, @reservation]) do |f| %>
-<%= f.button :submit, 'Confirm', class: 'btn btn-primary choose-btn' %>
+<%= f.input :restaurant_id , as: :hidden %>
+<%= f.input :evaluation_id , as: :hidden %>
+<%= f.button :submit, 'Confirm', mehotd: :post, class: 'btn btn-primary choose-btn' %>
 <% end %>
 
+<%# link_to "confirm", evaluation_reservations_path(@evaluation),method: :post, class: 'btn btn-primary' %>
 <div>
 <h6><%= @restaurant.name %></h6>
 <h6><%= @restaurant.address %></h6>
-<h6><%= @restaurant.update %></h6>
-<h6><%= @restaurant.username %></h6>
 </div>
