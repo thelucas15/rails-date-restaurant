@@ -10,7 +10,7 @@ class EvaluationsController < ApplicationController
     authorize @evaluation
     @evaluation.accepted = true
     if @evaluation.save
-      redirect_to  match_list_evaluations_path(@evaluation.match_list_id)
+      redirect_to  new_evaluation_reservation_path(@evaluation)
 
     end
   end

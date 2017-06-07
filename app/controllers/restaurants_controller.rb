@@ -18,11 +18,17 @@ class RestaurantsController < ApplicationController
 
     @user_location_requested = get_address
 
+    # user_hash_pref = current_user.hash_pref.chopfjdklsj
+
     if @range == nil
       @restaurants = policy_scope(Restaurant).where(food_type: @food_type)
+      @range = 7.5
     else
       @restaurants = policy_scope(Restaurant).near(@user_location_requested, @range.to_i).where(food_type: @food_type)
     end
+
+    # if user_hash_pref.any?
+
 
     @hash = Gmaps4rails.build_markers(@restaurants) do |restaurant, marker|
       marker.lat restaurant.latitude
