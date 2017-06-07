@@ -7,8 +7,6 @@
       <div class="card-body">
         <div class="card-picture" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.1)), url('<%= restaurant.photo %>')">
         <div class="counter">
-          <img src="http://placehold.it/30x30" alt="" class="card-avatar avatar">
-           <%=  restaurant.match_lists.count %>
           </div>
 
         </div>
@@ -17,7 +15,8 @@
           <h6><%= restaurant.name %></h6>
         </div>
         <div class="col-xs-3">
-          <h6><i class="fa fa-user-o"></i>140</h6>
+
+          <h6><i class="fa fa-smile-o"></i><%= restaurant.match_lists.count %></h6>
         </div>
         </div>
       </div>

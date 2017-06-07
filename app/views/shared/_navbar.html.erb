@@ -3,7 +3,7 @@
   <ul class="list-inline navbar-wagon-brand">
     <li>
       <%= link_to root_path do %>
-        <%= image_tag "logo dinner & date.png" %>
+        <%= image_tag "logo.png" %>
       <% end %>
     </li>
     <li>
@@ -26,10 +26,10 @@
     <% if user_signed_in? %>
 
       <!-- Notification -->
-      <%= link_to "#", class: "navbar-wagon-item navbar-wagon-link" do %>
+      <%= link_to evaluations_path, class: "navbar-wagon-item navbar-wagon-link" do %>
         <div class="badge-container">
           <i class="fa fa-envelope-o"></i>
-          <div class="badge badge-blue">3</div>
+          <div class="badge badge-blue"><%= Evaluation.where(selectee_id: current_user.id).where(accepted: nil).length %></div>
         </div>
       <% end %>
 

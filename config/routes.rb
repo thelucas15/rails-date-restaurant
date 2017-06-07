@@ -31,6 +31,8 @@ Rails.application.routes.draw do
     resources :evaluations, only: [:create, :index]
   end
 
+  resources :evaluations, only: [:index]
+
   resources :evaluations, only: [:create] do
     member do
       post :accept

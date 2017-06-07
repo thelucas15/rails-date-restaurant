@@ -1,7 +1,7 @@
 class EvaluationsController < ApplicationController
 
   def index
-   @evaluations = policy_scope(Evaluation).where(selectee_id: current_user.id)
+   @evaluations = policy_scope(Evaluation).where(selectee_id: current_user.id).where(accepted: nil)
   end
 
   def accept
@@ -34,8 +34,6 @@ class EvaluationsController < ApplicationController
 
     redirect_to match_list_evaluations_path(@match_list)
   end
-
-
 
 
 
