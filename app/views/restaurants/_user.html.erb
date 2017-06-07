@@ -23,7 +23,7 @@
           <div class="invite center-inline  ">
             <%= form_tag match_list_evaluations_path(match_list) do %>
               <%= hidden_field_tag 'selectee_id', match_list.user.id %>
-              <%= submit_tag 'Invite', class: 'btn btn-primary' %>
+              <%= submit_tag 'invite', class: 'fake-btn' %>
             <% end %>
           </div>
 

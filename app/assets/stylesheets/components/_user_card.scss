@@ -28,3 +28,12 @@
 .div-spacer {
   margin-bottom: 50px;
 }
+
+.fake-btn {
+  background: none;
+  color: $green;
+  border: none;
+  &:hover {
+    color: darken($green, 10%)
+  }
+}
