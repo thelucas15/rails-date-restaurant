@@ -4,7 +4,7 @@
 
 
           <div class="input-group search-labels">
-          <input type="text" class="form-control margin-xs" id="user-location" name="user_location" value="<%= @user_location %>" placeholder="Address" autocomplete="off" required >
+          <input type="text" class="form-control margin-xs" id="user-location" name="user_location" value="<%= params[:user_location] %>" placeholder="Address" autocomplete="off" required >
           <div class="input-group-addon pointer">
                   <span onclick="getLocation();" class="glyphicon glyphicon-map-marker"></span>
               </div>
@@ -154,7 +154,9 @@
 
                       </script>
               <% end %>
-
+<%= content_for(:js_file) do %>
+<%= javascript_include_tag 'google_maps_autocomplete' %>
+<% end %>
 
 <!-- <input class='hidden' name='datehide' id='datehide' value='before'/> -->
 

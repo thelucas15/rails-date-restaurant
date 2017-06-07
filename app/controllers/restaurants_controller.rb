@@ -13,7 +13,7 @@ class RestaurantsController < ApplicationController
 
     @range = params[:range]
 
-    @user_location_address = params[:user_location_address]
+    @user_location_address = session[:user_location_address] = params[:user_location_address]
     @user_location = params[:user_location]
 
     @user_location_requested = get_address
