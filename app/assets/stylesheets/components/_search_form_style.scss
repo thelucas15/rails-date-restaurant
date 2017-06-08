@@ -1,19 +1,20 @@
 .search-form {
-  margin-top: 10px;
+  margin-top: 0px;
 }
 .search-labels {
-  margin: 0;
+  margin-top: 0px;
 }
 
 .search-labels-2 {
-  margin: 10px;
+  width: 50%;
+  margin: 0 auto;
 }
 .form_datetime {
   color: black !important;
 }
 
 .slider {
-  margin-top: 20px;
+  margin-top: 10px;
 }
 .pointer:hover {
   cursor: pointer;
@@ -21,16 +22,16 @@
 
 .input {
 
-    width: 80%;
+    width: 70%;
     padding: 12px 20px;
-    margin: 8px 0;
+    margin: 0px 0;
     box-sizing: border-box;
 }
 
 input, label {
     display:block;
     font-size: 16px;
-    padding: 10px;
+    padding: 5px;
 }
 
 
@@ -42,7 +43,6 @@ input, label {
     text-align: center;
     line-height: 1.6em;
   }
-
 
 
 

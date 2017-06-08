@@ -12,6 +12,8 @@ class UserPreferencesController < ApplicationController
     @user.assign_attributes(user_params)
     if @user.save
       redirect_to root_path
+      # redirect_back(fallback_location: root_path)
+
       # redirect_to session[:return_to] ||= request.referer
     else
       render :edit

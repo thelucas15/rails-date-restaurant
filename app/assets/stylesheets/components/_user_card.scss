@@ -1,0 +1,39 @@
+.user-card {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+   p {
+      margin-bottom: 0;
+    }
+    .user-name {
+      font-size: 19px;
+    }
+    .date-info {
+      font-weight: lighter;
+      font-size: 15px;
+    }
+}
+
+.padded-right {
+  padding-right: 10px;
+}
+
+.avatar-card {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+
+.div-spacer {
+  margin-bottom: 50px;
+}
+
+.fake-btn {
+  background: none;
+  color: $green;
+  border: none;
+  &:hover {
+    color: darken($green, 10%)
+  }
+}

@@ -1,7 +1,7 @@
 class EvaluationsController < ApplicationController
 
   def index
-   @evaluations = policy_scope(Evaluation).where(selectee_id: current_user.id)
+   @evaluations = policy_scope(Evaluation).where(selectee_id: current_user.id).where(accepted: nil)
   end
 
   def accept
@@ -10,9 +10,9 @@ class EvaluationsController < ApplicationController
     authorize @evaluation
     @evaluation.accepted = true
     if @evaluation.save
-      redirect_to  match_list_evaluations_path(@evaluation.match_list_id)
-
+       redirect_to new_evaluation_reservation_path(@evaluation)
     end
+
   end
 
   def decline
@@ -37,12 +37,16 @@ class EvaluationsController < ApplicationController
 
 
 
-
-
   private
 
   def eval_params
     params.require(:evaluation).permit(:selector_id,:selectee_id)
+  end
+
+  def destroy
+    @evaluation = Evaluation.find(params[:Id])
+    authorize @evaluation
+    @evaluation.destroy
   end
 
 

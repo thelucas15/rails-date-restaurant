@@ -9,11 +9,16 @@ class EvaluationPolicy < ApplicationPolicy
     true
   end
 
+
   def accept?
     true
   end
 
   def decline?
+    true
+  end
+
+  def destroy?
     true
   end
 

@@ -9,7 +9,9 @@
 @import "font-awesome";
 @import "vendor/index";
 @import "bootstrap-datetimepicker";
-@import "jquery.ui.all";
+
+
+
 
 
 
@@ -51,5 +53,35 @@ ul {
   padding: 10px;
   float: left;
 }
-
-
+// fieldset {
+//       border: 0;
+//     }
+// label {
+//   display: block;
+//   margin: 10px 0 0 0;
+// }
+    .overflow {
+      height: 300px;
+    }
+.pref-label {
+  text-align: center;
+  display: inline-block;
+}
+#age_slider {
+  width: 50%;
+  margin: 0 auto;
+}
+#pref_slider {
+  width: 50%;
+  margin: 0 auto;
+}
+.ui-slider-handle {
+  width: 50%;
+  margin: 0 auto;
+}
+.label-slider {
+  text-align: center;
+}
+.label-range-pref {
+  text-align: center;
+}

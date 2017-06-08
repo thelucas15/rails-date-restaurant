@@ -1,0 +1,6 @@
+
+meta_product_name: "Food Buddies"
+meta_title: "Food Buddies - Find your food buddy!"
+meta_description: "Find your 'food friend' with our social app and enjoy the time together"
+meta_image: "foodbuddy_cover.png"                       # should exist in `app/assets/images/`
+# twitter_account: "@product_twitter_account"   # required for Twitter Cards

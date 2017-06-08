@@ -31,6 +31,8 @@ Rails.application.routes.draw do
     resources :evaluations, only: [:create, :index]
   end
 
+  resources :evaluations, only: [:index]
+
   resources :evaluations, only: [:create] do
     member do
       post :accept
@@ -39,9 +41,8 @@ Rails.application.routes.draw do
     resources :reservations, only: [:show, :create, :new] do
     end
   end
-  resources :users, only: [:index, :edit, :show, :create] do
-    post :impersonate, on: :member
-    post :stop_impersonating, on: :collection
-  end
+  resources :users, only: [:index, :edit, :create] do
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  end
 end
