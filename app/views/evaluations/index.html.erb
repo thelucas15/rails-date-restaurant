@@ -51,39 +51,42 @@
 </div>
 <% end %>
 
-<div class="container text-center">
-  <h1>Invitations you've sent</h1>
-<div class="row">
-    <% @sent_evaluations.each do |evaluation| %>
+   <% if @sent_evaluations.any? %>
+    <div class="container text-center">
+      <h1>Invitations you've sent</h1>
+    <div class="row">
+        <% @sent_evaluations.each do |evaluation| %>
 
-    <div class="col-xs-12 col-sm-4">
-      <div class="card">
-        <div class="card-body special-card-body">
-          <div class="card-picture" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.1)), url('<%= Restaurant.all.first.photo %>')">
-            <div class="counter">
+        <div class="col-xs-12 col-sm-4">
+          <div class="card">
+            <div class="card-body special-card-body">
+              <div class="card-picture" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.1)), url('<%= Restaurant.all.first.photo %>')">
+                <div class="counter">
 
 
-              <h3 class="text-white"><%= evaluation.restaurant.name %></h3>
+                  <h3 class="text-white"><%= evaluation.restaurant.name %></h3>
+
+                </div>
+              </div>
+              <ul class="list-inline card-likes">
+                <li>
+                  <img src="http://placehold.it/30x30" alt="" class="avatar-large">
+                </li>
+                <li>
+                  <h6><%= evaluation.selectee.first_name + " " + evaluation.selectee.last_name%></h6>
+                </li>
+              </ul>
 
             </div>
+            <!--   <a class="card-link" href="#" ></a> -->
           </div>
-          <ul class="list-inline card-likes">
-            <li>
-              <img src="http://placehold.it/30x30" alt="" class="avatar-large">
-            </li>
-            <li>
-              <h6><%= evaluation.selectee.first_name + " " + evaluation.selectee.last_name%></h6>
-            </li>
-          </ul>
-
         </div>
-        <!--   <a class="card-link" href="#" ></a> -->
+        <% end %>
       </div>
     </div>
-    <% end %>
-  </div>
+  <% end %>
 </div>
-</div>
+<div class="space-footer-no-content"></div>
 
 
 
