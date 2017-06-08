@@ -18,10 +18,10 @@
           </div>
           <ul class="list-inline card-likes">
             <li>
-                  <%= image_tag avatar_url(evaluation.selector), class: "avatar" %>
+              <%= cl_image_tag evaluation.selectee.photo, :width=>50, :height=>50, gravity: 'face', class: "avatar-large", alt: "user" %>
             </li>
             <li>
-              <h6><%= evaluation.selector.username%></h6>
+              <h6><%= evaluation.selectee.username%></h6>
             </li>
           </ul>
           <div class="text-center">
@@ -72,7 +72,7 @@
               </div>
               <ul class="list-inline card-likes">
                 <li>
-                  <%= image_tag avatar_url(evaluation.selectee), class: "avatar" %>
+                  <%= cl_image_tag evaluation.selectee.photo, :width=>50, :height=>50, gravity: 'face', class: "avatar-large", alt: "user" %>
                 </li>
                 <li>
                   <h6><%= evaluation.selectee.username%></h6>

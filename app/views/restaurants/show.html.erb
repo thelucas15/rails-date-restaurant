@@ -28,9 +28,9 @@
 
           <div class="div-spacer"></div>
 
-          <div class="remove center center-inline">
+          <div class="remove center center-inline hidden">
             <% if policy(match_list).destroy?%>
-              <%= link_to "Remove me from this list ", restaurant_match_list_path(match_list.restaurant,match_list), method: :delete, data: {confirm: "Are you sure?" }, class: 'btn btn-danger' %>
+              <%= link_to "X", restaurant_match_list_path(match_list.restaurant,match_list), method: :delete, data: {confirm: "Are you sure?" }, class: 'btn btn-danger' %>
             <% end %>
           </div>
         <% end %>
