@@ -21,7 +21,7 @@
               <img src="http://placehold.it/30x30" alt="" class="avatar-large">
             </li>
             <li>
-              <h6><%= evaluation.selector.first_name + " " + evaluation.selector.last_name%></h6>
+              <h6><%= evaluation.selector.username%></h6>
             </li>
           </ul>
           <div class="text-center">
@@ -43,7 +43,9 @@
     <% end %>
   </div>
 </div>
-<% else %>
+<% end %>
+
+<% if @sent_evaluations.empty? && @received_evaluations.empty? %>
 <div class="no-invitations">
   <div class="no-invitations-message text-center">
     <p>Hey buddie, you have no pending invitations.</p>
@@ -51,7 +53,7 @@
 </div>
 <% end %>
 
-   <% if @sent_evaluations.any? %>
+<% if @sent_evaluations.any? %>
     <div class="container text-center">
       <h1>Invitations you've sent</h1>
     <div class="row">
@@ -73,7 +75,7 @@
                   <img src="http://placehold.it/30x30" alt="" class="avatar-large">
                 </li>
                 <li>
-                  <h6><%= evaluation.selectee.first_name + " " + evaluation.selectee.last_name%></h6>
+                  <h6><%= evaluation.selectee.username%></h6>
                 </li>
               </ul>
 
@@ -86,7 +88,10 @@
     </div>
   <% end %>
 </div>
-<div class="space-footer-no-content"></div>
-
+<% if @sent_evaluations.empty? && @received_evaluations.empty? %>
+  <div class="space-footer-no-content"></div>
+<% else  %>
+  <div class="div-spacer"></div>
+<% end %>
 
 
