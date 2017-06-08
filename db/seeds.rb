@@ -26,7 +26,7 @@ restaurants_attributes = [
     photo: "https://u.tfstatic.com/restaurant_photos/933/64933/169/612/lisboete-sala-0f4d2.jpg"
   },
   {
-    name:         "Sakana Restaurante Bar Sushi",
+    name:         "Sakana Bar Sushi",
     address:      "Cais da Viscondessa - Santos 1200-109 Lisboa Portugal",
     food_type:    "japanese",
     description:  "Japanese Cuisine",
@@ -47,7 +47,7 @@ restaurants_attributes = [
     photo:"https://u.tfstatic.com/restaurant_photos/722/64722/169/612/las-ficheras-sala-0bb2e.jpg"
   },
   {
-    name:         "Bica do Sapato - Sushi Bar",
+    name:         "Bica do Sapato",
     address:      "Av. Infante Dom Henrique Armazém B, Cais da Pedra, Santa Apolónia 1900-436 Lisboa Portugal",
     food_type:    "japanese",
     description:  "Japanese Cuisine",
@@ -93,7 +93,7 @@ restaurants_attributes = [
     photo:"https://u.tfstatic.com/restaurant_photos/180/73180/169/612/come-prima-sala-entrada-f9c66.jpg"
   },
   {
-    name:       "Pizzaria Divinos Prazeres",
+    name:       "Divinos Prazeres",
     address:    "Rua Fradesso da Silveira, Nº2 Lj-B, 1300-609 Lisboa Portugal",
     food_type:   "italian",
     description: "Pizzas Italianas",
