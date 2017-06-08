@@ -23,6 +23,7 @@
     <meta name="twitter:creator" content="<%= DEFAULT_META["twitter_account"] %>">
     <meta name="twitter:image:src" content="<%= meta_image %>"> -->
     <%= csrf_meta_tags %>
+    <%= favicon_link_tag %>
     <%= action_cable_meta_tag %>
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
@@ -30,7 +31,6 @@
   </head>
   <body>
   <!-- app/views/layouts/application.html.erb -->
-    <%= favicon_link_tag %>
     <%= render 'shared/navbar' %>
     <%= render 'shared/flash_messages' %>
 
