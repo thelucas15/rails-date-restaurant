@@ -18,7 +18,7 @@
           </div>
           <ul class="list-inline card-likes">
             <li>
-              <img src="http://placehold.it/30x30" alt="" class="avatar-large">
+                  <%= image_tag avatar_url(evaluation.selector), class: "avatar" %>
             </li>
             <li>
               <h6><%= evaluation.selector.username%></h6>
@@ -72,7 +72,7 @@
               </div>
               <ul class="list-inline card-likes">
                 <li>
-                  <img src="http://placehold.it/30x30" alt="" class="avatar-large">
+                  <%= image_tag avatar_url(evaluation.selectee), class: "avatar" %>
                 </li>
                 <li>
                   <h6><%= evaluation.selectee.username%></h6>

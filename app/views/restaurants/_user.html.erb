@@ -2,7 +2,7 @@
   <div class="user-card">
     <div class="avatar-card">
       <div class="user-avatar padded-right">
-        <%= cl_image_tag match_list.user.photo, {class: "avatar-large", alt: "user"}%>
+        <%= cl_image_tag match_list.user.photo, :width=>50, :height=>50, gravity: 'face', class: "avatar-large", alt: "user" %>
       </div>
 
       <div class="user-and-date">
