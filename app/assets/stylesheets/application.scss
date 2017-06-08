@@ -64,13 +64,24 @@ ul {
       height: 300px;
     }
 .pref-label {
-  float: left;
+  text-align: center;
   display: inline-block;
 }
 #age_slider {
-  width: 100%;
+  width: 50%;
+  margin: 0 auto;
 }
 #pref_slider {
-  width: 100%;
+  width: 50%;
+  margin: 0 auto;
 }
-
+.ui-slider-handle {
+  width: 50%;
+  margin: 0 auto;
+}
+.label-slider {
+  text-align: center;
+}
+.label-range-pref {
+  text-align: center;
+}

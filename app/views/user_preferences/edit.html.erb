@@ -15,19 +15,21 @@
 
       <%# f.input :age, placeholder: "36", required: true %>
 
-      <label>Your Age</label>
+      <label class="label-slider">Your Age</label>
       <div id="age_slider"></div>
-      <label id="age_lable"></label>
+      <label class="label-slider" id="age_lable"></label>
       <%= f.hidden_field :age %>
 
 
-      <label>Age preferences</label>
+      <label class="label-slider" >Age preferences</label>
       <div id="pref_slider"></div>
 
+      <div class="label-range-pref">
       <label id="start_age_lable" class="pref-label"></label>
       <label id="end_age_lable" class="pref-label"></label>
       <%= f.hidden_field :age_pref_start %>
       <%= f.hidden_field :age_pref_end %>
+      </div>
 
       <br>
       <br>

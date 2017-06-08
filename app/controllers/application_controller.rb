@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+
   protect_from_forgery with: :exception
 
   before_action :authenticate_user!
@@ -16,6 +17,10 @@ class ApplicationController < ActionController::Base
   #   flash[:alert] = "You are not authorized to perform this action."
   #   redirect_to(root_path)
   # end
+
+  def default_url_options
+  { host: ENV["www.foodbuddies.life"] || "localhost:3000" }
+  end
 
   private
 

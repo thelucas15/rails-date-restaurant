@@ -1,5 +1,14 @@
+
+<% content_for :meta_title, "#{@restaurant.name} is on #{DEFAULT_META["meta_product_name"]}" %>
+<% content_for :meta_description, @restaurant.description %>
+<% content_for :meta_image, url(@restaurant.photo) %>
+
+
+
+
 <div class="restaurant-card text-center">
   <p><%= @restaurant.food_type.titleize %></p>
+
   <h2> <%= @restaurant.name %></h2>
   <%=  @restaurant.address %>
         <div class="restaurant center">
