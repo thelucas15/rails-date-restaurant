@@ -83,12 +83,21 @@
 
 .accept {
   background-color: $green;
-  height: 100px;
-  width: 50%;
+  height: 50px;
+  width: 100px;
 }
 
 .decline {
   background-color: $red;
-  height: 100px;
-  width: 50%;
+  height: 50px;
+  width: 100px;
+}
+
+.text-white {
+  color: white;
+  text-shadow: 1px 1px #0a0a0a;
+}
+
+.special-card-body {
+  padding: 5px 10px 5px 10px;
 }

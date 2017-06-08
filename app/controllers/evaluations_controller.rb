@@ -1,7 +1,9 @@
 class EvaluationsController < ApplicationController
 
   def index
-   @evaluations = policy_scope(Evaluation).where(selectee_id: current_user.id).where(accepted: nil)
+   @received_evaluations = policy_scope(Evaluation).where(selectee_id: current_user.id).where(accepted: nil)
+    @sent_evaluations = policy_scope(Evaluation).where(selector_id: current_user.id).where(accepted: nil)
+
   end
 
   def accept
