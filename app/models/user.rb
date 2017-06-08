@@ -15,11 +15,6 @@ class User < ApplicationRecord
   has_many :evaluations
 
   validates :username, presence: true, uniqueness: true, on: :update
-  validates :age, presence: true, on: :update
-  validates :age_pref_start, presence: true, on: :update
-  validates :age_pref_end, presence: true, on: :update
-  validates :description, presence: true, on: :update
-  validates :hash_tag_pref, presence: true, on: :update
   validates :email, presence: true, on: :update
   # validates :password, presence: true, on: :update
 
