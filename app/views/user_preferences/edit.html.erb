@@ -50,8 +50,8 @@
 <script type="text/javascript">
   $(document).ready(function() {
     var handle2 = $( "#start_age_lable" );
-                      default_value1 = <%= @user.age_pref_start %>;
-                      default_value2 = <%= @user.age_pref_end %>;
+                      default_value1 = <%= @user.age_pref_start || 25 %>;
+                      default_value2 = <%= @user.age_pref_end || 30  %>;
                       current_val_element1 = $("#start_age_lable");
                       current_val_element1.text(default_value1);
                       current_val_element2 = $("#end_age_lable");
@@ -77,7 +77,7 @@
    });
                 $( function() {
                     var handle = $( "#age_lable" );
-                      default_value = <%= @user.age %>;
+                      default_value = <%= @user.age || 25 %>;
                       current_val_element = $("#age_lable");
                       current_val_element.text(default_value);
 
