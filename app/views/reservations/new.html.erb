@@ -19,14 +19,14 @@
 
   <h2>Congratulations!</h2>
   <div>
-  <h3><%= @evaluation.selector.username %></h3>
+  <h3><%= current_user.username %></h3>
   </div>
 
   <p>Your're going to the restaurant:</p>
   <h4 class="restaurant-name"> <%= @restaurant.name %></h4>
   <p>on <%= @evaluation.match_list.date.strftime("%d %b, %Y") %> at <%= @evaluation.match_list.start_time.strftime("%H:%M") %></p>
   <p>with:</p>
-  <h3><%= @evaluation.selectee.username %></h3>
+  <h3><%= @evaluation.selectee == current_user ? @evaluation.selector.username : @evaluation.selectee.username %></h3>
   <hr>
   <p><strong>Restaurant address:</strong></p>
   <p><%=  @restaurant.address %></p>
@@ -40,16 +40,10 @@
     </div>
 </div>
 
+<div class="div-spacer"></div>
 
-
-<!-- (date: @date, start_time: @start_time,  food_type: @restaurant.food_type), class: 'card-link'
- --><div class="back">
-
-    <%= link_to "back", restaurants_path %>
+<div class="row text-center">
+    <%= link_to "Back", restaurants_path, class: 'btn btn-default btn-back' %>
 </div>
 
-  <!-- <div class="no-invitations">
-    <div class="no-invitations-message text-center">
-      <p>Hey buddie, you have no pending invitations.</p>
-    </div>
-  </div> -->
+<div class="div-spacer"></div>

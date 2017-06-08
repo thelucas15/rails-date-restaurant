@@ -66,3 +66,11 @@
     background-transparency: 0.5;
   }
 }
+
+.btn-back {
+  border-radius: 50px;
+  &:hover {
+    background-transparency: 0.5;
+    background-color: white;
+  }
+}
